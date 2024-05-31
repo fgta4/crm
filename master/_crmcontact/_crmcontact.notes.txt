@@ -1,0 +1,7 @@
+_crmcontact
+
+original path : /apps/crm/master/_crmcontact
+created by    : Agung Nugroho
+                agung_dhewe@yahoo.com
+created date  : 2019-12-11
+================================================

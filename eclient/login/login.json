@@ -1,0 +1,8 @@
+{
+	"title" : "Login",
+	"allowanonymous" : false,
+	"allowedgroups" : ["public"],
+	"apis" : {
+		"dologin" : {"allowanonymous" : true}
+	}	
+}

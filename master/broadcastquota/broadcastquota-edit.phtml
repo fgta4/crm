@@ -1,0 +1,102 @@
+<div id="pnl_edit">
+	<div class="fgta-page-title" style="display: flex; align-items: center ">
+		<div>Edit Quota</div>
+		<a id="pnl_edit-btn_edit" href="javascript:void(0)" class="easyui-linkbutton" style="margin-left:10px;" data-options="plain:true,iconCls:'fgta-icon-edit'">edit</a>
+	</div>
+
+
+	<form id="pnl_edit-form">
+
+		<div class="form_row pnl_edit_row txt_broadcastquota_id" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">ID</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-txt_broadcastquota_id" class="easyui-textbox" mapping="broadcastquota_id" uppercase="true" maxlength="14" style="width: 400px" data-options="multiline: false , required: true, invalidMessage: 'ID harus diisi' ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_edit_row cbo_broadcasttype_id" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Type</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-cbo_broadcasttype_id" class="easyui-combo" style="width: 400px" mapping="broadcasttype_id" display="broadcasttype_name" data-options="editable:false, valueField:'id', textField:'text' , required: true, invalidMessage: 'Type harus diisi'"   validType="requiredcombo['pnl_edit-cbo_broadcasttype_id']" >
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_edit_row txt_broadcastquota_name" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Broadcast Quota Name</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-txt_broadcastquota_name" class="easyui-textbox" mapping="broadcastquota_name" uppercase="true" maxlength="30" style="width: 400px" data-options="multiline: false , required: true, invalidMessage: 'Nama Quota harus diisi' ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_edit_row txt_broadcastquota_saldovalue" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Saldo Value</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-txt_broadcastquota_saldovalue" class="easyui-numberbox" mapping="broadcastquota_saldovalue" style="width: 400px; text-align:right" data-options="precision: 0, decimalSeparator:'.', groupSeparator:','  , disabled: true">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_edit_row txt_broadcastquota_saldocredit" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Saldo Credit</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-txt_broadcastquota_saldocredit" class="easyui-numberbox" mapping="broadcastquota_saldocredit" style="width: 400px; text-align:right" data-options="precision: 0, decimalSeparator:'.', groupSeparator:','  , disabled: true">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_edit_row cbo_prepaid_accbudget_id" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Prepaid Budget Account</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-cbo_prepaid_accbudget_id" class="easyui-combo" style="width: 400px" mapping="prepaid_accbudget_id" display="prepaid_accbudget_name" data-options="editable:false, valueField:'id', textField:'text' , required: true, invalidMessage: 'Account Budget harus diisi', prompt: '-- PILIH --'"   validType="requiredcombo['pnl_edit-cbo_prepaid_accbudget_id']" >
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_edit_row cbo_prepaid_coa_id" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Prepaid Account</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-cbo_prepaid_coa_id" class="easyui-combo" style="width: 400px" mapping="prepaid_coa_id" display="prepaid_coa_name" data-options="editable:false, valueField:'id', textField:'text' , required: true, invalidMessage: 'Account harus diisi', prompt: '-- PILIH --'"   validType="requiredcombo['pnl_edit-cbo_prepaid_coa_id']" >
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_edit_row cbo_broadcastmodel_id" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Model</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-cbo_broadcastmodel_id" class="easyui-combo" style="width: 400px" mapping="broadcastmodel_id" display="broadcastmodel_name" data-options="editable:false, valueField:'id', textField:'text' , required: true, invalidMessage: 'Model harus diisi'"   validType="requiredcombo['pnl_edit-cbo_broadcastmodel_id']" >
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+	</form>
+
+
+	<div class="form_row" style="margin-top: 30px">
+		<div class="form_label_col"></div>
+		<div class="form_input_col" style="border: 0px solid black">
+			<a id="pnl_edit-btn_save" class="easyui-linkbutton c1" style="width">Simpan</a>
+		</div>
+	</div>	
+
+
+
+
+
+	<div style="margin-top: 30px; margin-left:-5px; margin-right: -5px; background-color: #cccccc; display: flex; justify-content: space-between; padding: 10px 2px 2px 2px ">
+		<div>
+			<!-- letakkan tombol yang lin disini -->
+			
+			
+			
+			
+		</div>
+		<div>
+			<a id="pnl_edit-btn_delete" class="easyui-linkbutton c5" style="margin-bottom: 10px; margin-right: 10px">Hapus</a>
+		</div>
+	</div>
+
+</div>
+

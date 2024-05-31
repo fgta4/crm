@@ -1,0 +1,123 @@
+<div id="pnl_editattendantform">
+	<div class="fgta-page-title" style="display: flex; align-items: center ">
+		<div id="pnl_editattendantform-caption">{{STATE_BEG}}Attendant{{STATE_END}}</div>
+		<a id="pnl_editattendantform-btn_edit" href="javascript:void(0)" class="easyui-linkbutton fgta-button-edit" style="margin-left:10px;" data-options="plain:true,iconCls:'fgta-icon-edit'">edit</a>
+	</div>
+	<div id="pnl_editattendantform-title" class="fgta-page-subtitle">XXXXXXX</div>
+
+
+	<form id="pnl_editattendantform-form">
+
+		<div class="form_row pnl_editattendantform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">ID</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editattendantform-txt_crmeventattendant_id" class="easyui-textbox" mapping="crmeventattendant_id"  maxlength="14"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editattendantform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Invitation Id</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editattendantform-txt_invitation_id" class="easyui-textbox" mapping="invitation_id"  maxlength="30"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editattendantform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Phone</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editattendantform-txt_crmeventattendant_phone" class="easyui-textbox" mapping="crmeventattendant_phone" uppercase="true" maxlength="90"  style="width: 400px" data-options="multiline:false , required: true, invalidMessage: 'Nomor telpon harus diisi' ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editattendantform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Name</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editattendantform-txt_crmeventattendant_name" class="easyui-textbox" mapping="crmeventattendant_name" uppercase="true" maxlength="90"  style="width: 400px" data-options="multiline:false , required: true, invalidMessage: 'Nama harus diisi' ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editattendantform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Name</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editattendantform-txt_crmeventattendant_address" class="easyui-textbox" mapping="crmeventattendant_address" uppercase="true" maxlength="255"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editattendantform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">City</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editattendantform-txt_crmeventattendant_city" class="easyui-textbox" mapping="crmeventattendant_city" uppercase="true" maxlength="30"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editattendantform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Tanggal Hadir</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editattendantform-dt_crmeventattendant_date" class="easyui-datebox" style="width: 400px" mapping="crmeventattendant_date" data-options="editable:false ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editattendantform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Jam hadir</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editattendantform-txt_crmeventattendant_time" class="easyui-textbox" mapping="crmeventattendant_time"  maxlength="8"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editattendantform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Event</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editattendantform-txt_crmevent_id" class="easyui-textbox" mapping="crmevent_id"  maxlength="14"  style="width: 400px" data-options="multiline:false  , disabled: true">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+	</form>
+
+
+	<div class="form_row" style="margin-top: 30px">
+		<div class="form_label_col"></div>
+		<div class="form_input_col" style="border: 0px solid black">
+			<div style="margin-bottom: 10px">
+				<input id="pnl_editattendantform-autoadd" type="checkbox"><label for="pnl_editattendantform-autoadd">Otomatis tambah baru setelah berhasil disimpan</label>
+			</div>
+			<div>
+				<a id="pnl_editattendantform-btn_save" class="easyui-linkbutton c1 fgta-button-save" style="width: 100px">Simpan</a>
+			</div>
+		</div>
+	</div>	
+
+
+	<?php
+	$custombuttonbar = __DIR__.'/crmevent-attendantform-custombuttonbar.phtml';
+	if (is_file($custombuttonbar)) {
+		include $custombuttonbar;
+	} else { ?>
+	<div id="pnl_editattendantform-buttonbar" style="margin-top: 30px; margin-left:-5px; margin-right: -5px; background-color: #cccccc; height: 40px; display: flex; justify-content: space-between; padding: 5px 2px 2px 2px ">
+		<div id="pnl_editattendantform-buttonbar-left">
+			<a id="pnl_editattendantform-btn_prev" class="easyui-linkbutton c8 fgta-button-detilprev" style="width: 50px">Prev</a>
+			<a id="pnl_editattendantform-btn_next" class="easyui-linkbutton c8 fgta-button-detilnext" style="width: 50px">Next</a>
+		</div>
+
+		<div id="pnl_editattendantform-buttonbar-middle">
+			<a id="pnl_editattendantform-btn_addnew" class="easyui-linkbutton c8 fgta-button-detiladd" style="width: 100px">Tambah Baru</a>
+		</div>
+
+		<div id="pnl_editattendantform-buttonbar-right">
+			<a id="pnl_editattendantform-btn_delete" class="easyui-linkbutton c5" style="width: 100px">Hapus</a>
+		</div>
+	</div>
+	<?php } ?>
+
+
+
+
+</div>	

@@ -1,0 +1,138 @@
+<div id="pnl_editinvitedform">
+	<div class="fgta-page-title" style="display: flex; align-items: center ">
+		<div id="pnl_editinvitedform-caption">{{STATE_BEG}}Invited{{STATE_END}}</div>
+		<a id="pnl_editinvitedform-btn_edit" href="javascript:void(0)" class="easyui-linkbutton fgta-button-edit" style="margin-left:10px;" data-options="plain:true,iconCls:'fgta-icon-edit'">edit</a>
+	</div>
+	<div id="pnl_editinvitedform-title" class="fgta-page-subtitle">XXXXXXX</div>
+
+
+	<form id="pnl_editinvitedform-form">
+
+		<div class="form_row pnl_editinvitedform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">ID</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editinvitedform-txt_crmeventinvited_id" class="easyui-textbox" mapping="crmeventinvited_id"  maxlength="14"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editinvitedform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Name</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editinvitedform-txt_crmeventinvited_name" class="easyui-textbox" mapping="crmeventinvited_name" uppercase="true" maxlength="90"  style="width: 400px" data-options="multiline:false , required: true, invalidMessage: 'Nama harus diisi' ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editinvitedform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Adress</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editinvitedform-txt_crmeventinvited_address" class="easyui-textbox" mapping="crmeventinvited_address" uppercase="true" maxlength="255"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editinvitedform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">City</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editinvitedform-txt_crmeventinvited_city" class="easyui-textbox" mapping="crmeventinvited_city" uppercase="true" maxlength="30"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editinvitedform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Phone</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editinvitedform-txt_crmeventinvited_phone" class="easyui-textbox" mapping="crmeventinvited_phone" uppercase="true" maxlength="90"  style="width: 400px" data-options="multiline:false , required: true, invalidMessage: 'nomor telpon harus diisi' ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;">Nomor telp yang akan di hubungi</div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editinvitedform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Email</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editinvitedform-txt_crmeventinvited_email" class="easyui-textbox" mapping="crmeventinvited_email" lowercase="true" maxlength="90"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;">Email yang akan di hubungi</div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editinvitedform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Invitation Id</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editinvitedform-txt_invitation_id" class="easyui-textbox" mapping="invitation_id"  maxlength="30"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editinvitedform_row" >
+			<div class="form_label_col"></div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editinvitedform-chk_crmeventinvited_iscontacted" class="easyui-checkbox c1" mapping="crmeventinvited_iscontacted" data-options="label: 'Contacted', labelPosition: 'after', checked: false , readonly: true">
+			</div>
+		</div>
+
+		<div class="form_row pnl_editinvitedform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Contact Date</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editinvitedform-dt_crmeventinvited_contactdate" class="easyui-datebox" style="width: 400px" mapping="crmeventinvited_contactdate" data-options="editable:false , readonly: true">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editinvitedform_row" >
+			<div class="form_label_col easyui-tooltip" title="yang bertugas menghubungi kontak ini" style="border: 0px solid black; vertical-align: top; margin-top: 7px;">PIC</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editinvitedform-cbo_user_id" class="easyui-combo" style="width: 400px" mapping="user_id" display="user_fullname" data-options="editable:false, valueField:'id', textField:'text' , prompt: 'NONE'" >
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editinvitedform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Event</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editinvitedform-txt_crmevent_id" class="easyui-textbox" mapping="crmevent_id"  maxlength="14"  style="width: 400px" data-options="multiline:false  , disabled: true">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+	</form>
+
+
+	<div class="form_row" style="margin-top: 30px">
+		<div class="form_label_col"></div>
+		<div class="form_input_col" style="border: 0px solid black">
+			<div style="margin-bottom: 10px">
+				<input id="pnl_editinvitedform-autoadd" type="checkbox"><label for="pnl_editinvitedform-autoadd">Otomatis tambah baru setelah berhasil disimpan</label>
+			</div>
+			<div>
+				<a id="pnl_editinvitedform-btn_save" class="easyui-linkbutton c1 fgta-button-save" style="width: 100px">Simpan</a>
+			</div>
+		</div>
+	</div>	
+
+
+	<?php
+	$custombuttonbar = __DIR__.'/crmevent-invitedform-custombuttonbar.phtml';
+	if (is_file($custombuttonbar)) {
+		include $custombuttonbar;
+	} else { ?>
+	<div id="pnl_editinvitedform-buttonbar" style="margin-top: 30px; margin-left:-5px; margin-right: -5px; background-color: #cccccc; height: 40px; display: flex; justify-content: space-between; padding: 5px 2px 2px 2px ">
+		<div id="pnl_editinvitedform-buttonbar-left">
+			<a id="pnl_editinvitedform-btn_prev" class="easyui-linkbutton c8 fgta-button-detilprev" style="width: 50px">Prev</a>
+			<a id="pnl_editinvitedform-btn_next" class="easyui-linkbutton c8 fgta-button-detilnext" style="width: 50px">Next</a>
+		</div>
+
+		<div id="pnl_editinvitedform-buttonbar-middle">
+			<a id="pnl_editinvitedform-btn_addnew" class="easyui-linkbutton c8 fgta-button-detiladd" style="width: 100px">Tambah Baru</a>
+		</div>
+
+		<div id="pnl_editinvitedform-buttonbar-right">
+			<a id="pnl_editinvitedform-btn_delete" class="easyui-linkbutton c5" style="width: 100px">Hapus</a>
+		</div>
+	</div>
+	<?php } ?>
+
+
+
+
+</div>	

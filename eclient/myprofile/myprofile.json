@@ -1,0 +1,9 @@
+{
+	"title" : "My Profile",
+	"allowanonymous" : false,
+	"allowedgroups" : ["public"],
+	"apis" : {
+		"loadcurrent" : {"allowanonymous" : true},
+		"save" : {"allowanonymous" : true}
+	}	
+}

@@ -1,0 +1,307 @@
+<div id="pnl_editvouform">
+	<div class="fgta-page-title" style="display: flex; align-items: center ">
+		<div id="pnl_editvouform-caption">{{STATE_BEG}}Vouchers{{STATE_END}}</div>
+		<a id="pnl_editvouform-btn_edit" href="javascript:void(0)" class="easyui-linkbutton fgta-button-edit" style="margin-left:10px;" data-options="plain:true,iconCls:'fgta-icon-edit'">edit</a>
+	</div>
+	<div id="pnl_editvouform-title" class="fgta-page-subtitle">XXXXXXX</div>
+
+
+	<form id="pnl_editvouform-form">
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">ID</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_id" class="easyui-textbox" mapping="vou_id"  maxlength="30"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">No</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_no" class="easyui-numberbox" mapping="vou_no" style="width: 400px; text-align:right" data-options="precision: 0, decimalSeparator:'.', groupSeparator:','  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Rand</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_ran" class="easyui-textbox" mapping="vou_ran"  maxlength="2"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Parity</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_parity" class="easyui-textbox" mapping="vou_parity"  maxlength="2"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Value</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_value" class="easyui-numberbox" mapping="vou_value" style="width: 400px; text-align:right" data-options="precision: 2, decimalSeparator:'.', groupSeparator:','  , required: true">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">InfoCode</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_infocode" class="easyui-textbox" mapping="vou_infocode"  maxlength="13"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">InfoCode No</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_infocoderan" class="easyui-textbox" mapping="vou_infocoderan"  maxlength="2"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">InfoCode Parity</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_infocodeparity" class="easyui-textbox" mapping="vou_infocodeparity"  maxlength="2"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Assign To</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_assignto" class="easyui-textbox" mapping="vou_assignto"  maxlength="60"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Assign To Name</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_assigntoname" class="easyui-textbox" mapping="vou_assigntoname"  maxlength="255"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Que Sent To</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_voumailerque_id" class="easyui-textbox" mapping="voumailerque_id"  maxlength="14"  style="width: 400px" data-options="multiline:false , disabled: true ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Picture</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-fl_vou_file" class="easyui-filebox" mapping="vou_file" style="width: 400px" data-options="multiline: false , accept: 'image/*' ">
+				<div style="display: flex;">
+					<a class="filedownloadlink" id="pnl_editvouform-fl_vou_file_link" style="cursor:pointer; margin-right: 10px; display: none">Download File</a>	
+					<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+				</div>
+				<img id="pnl_editvouform-fl_vou_file_img" style="width: 200px; width: 200px; border: 1px solid: #ccc; display:none">				
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"></div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-chk_vou_isactive" class="easyui-checkbox c1" mapping="vou_isactive" data-options="label: 'Active', labelPosition: 'after', checked: false , labelWidth: '300px'">
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Date Active</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-dt_vou_dtactive" class="easyui-datebox" style="width: 400px" mapping="vou_dtactive" data-options="editable:false ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Date Expired</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-dt_vou_dtexpired" class="easyui-datebox" style="width: 400px" mapping="vou_dtexpired" data-options="editable:false ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"></div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-chk_vou_isview" class="easyui-checkbox c1" mapping="vou_isview" data-options="label: 'View', labelPosition: 'after', checked: false , labelWidth: '300px'">
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">View Date</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_viewdate" class="easyui-textbox" mapping="vou_viewdate"   style="width: 400px" data-options="multiline:false , disabled: true ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"></div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-chk_vou_ismark" class="easyui-checkbox c1" mapping="vou_ismark" data-options="label: 'Marked', labelPosition: 'after', checked: false , labelWidth: '300px'">
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">MarkRegion</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_markregion" class="easyui-textbox" mapping="vou_markregion"  maxlength="5"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">MarkBranch</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_markbranch" class="easyui-textbox" mapping="vou_markbranch"  maxlength="7"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">MarkMachine</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_markmachine" class="easyui-textbox" mapping="vou_markmachine"  maxlength="10"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"></div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-chk_vou_isuse" class="easyui-checkbox c1" mapping="vou_isuse" data-options="label: 'Used', labelPosition: 'after', checked: false , labelWidth: '300px'">
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">UseBy</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_useby" class="easyui-textbox" mapping="vou_useby"  maxlength="14"  style="width: 400px" data-options="multiline:false , disabled: true ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">UseDate</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_usedate" class="easyui-textbox" mapping="vou_usedate"   style="width: 400px" data-options="multiline:false , disabled: true ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Create From BonId</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_createfrombon" class="easyui-textbox" mapping="vou_createfrombon"  maxlength="32"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Create From Bon Value</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_createfrombonvalue" class="easyui-numberbox" mapping="vou_createfrombonvalue" style="width: 400px; text-align:right" data-options="precision: 2, decimalSeparator:'.', groupSeparator:','  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">BonId</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_bon" class="easyui-textbox" mapping="vou_bon"  maxlength="32"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">RegionBranch</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_useregionbranch" class="easyui-textbox" mapping="vou_useregionbranch"  maxlength="30"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">RegionBranchName</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_useregionbranchname" class="easyui-textbox" mapping="vou_useregionbranchname"  maxlength="90"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Use Value</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_vou_usevalue" class="easyui-numberbox" mapping="vou_usevalue" style="width: 400px; text-align:right" data-options="precision: 2, decimalSeparator:'.', groupSeparator:','  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" >
+			<div class="form_label_col"></div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-chk_vou_isdup" class="easyui-checkbox c1" mapping="vou_isdup" data-options="label: 'Duplication', labelPosition: 'after', checked: false , labelWidth: '300px'">
+			</div>
+		</div>
+
+		<div class="form_row pnl_editvouform_row" style="display: none">
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">ID</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editvouform-txt_voubatch_id" class="easyui-textbox" mapping="voubatch_id"  maxlength="5"  style="width: 400px" data-options="multiline:false  , disabled: true">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+	</form>
+
+
+	<div class="form_row" style="margin-top: 30px">
+		<div class="form_label_col"></div>
+		<div class="form_input_col" style="border: 0px solid black">
+			<div style="margin-bottom: 10px">
+				<input id="pnl_editvouform-autoadd" type="checkbox"><label for="pnl_editvouform-autoadd">Otomatis tambah baru setelah berhasil disimpan</label>
+			</div>
+			<div>
+				<a id="pnl_editvouform-btn_save" class="easyui-linkbutton c1 fgta-button-save" style="width: 100px">Simpan</a>
+			</div>
+		</div>
+	</div>	
+
+
+	<?php
+	$custombuttonbar = __DIR__.'/voubatch-vouform-custombuttonbar.phtml';
+	if (is_file($custombuttonbar)) {
+		include $custombuttonbar;
+	} else { ?>
+	<div id="pnl_editvouform-buttonbar" style="margin-top: 30px; margin-left:-5px; margin-right: -5px; background-color: #cccccc; height: 40px; display: flex; justify-content: space-between; padding: 5px 2px 2px 2px ">
+		<div id="pnl_editvouform-buttonbar-left">
+			<a id="pnl_editvouform-btn_prev" class="easyui-linkbutton c8 fgta-button-detilprev" style="width: 50px">Prev</a>
+			<a id="pnl_editvouform-btn_next" class="easyui-linkbutton c8 fgta-button-detilnext" style="width: 50px">Next</a>
+		</div>
+
+		<div id="pnl_editvouform-buttonbar-middle">
+			<a id="pnl_editvouform-btn_addnew" class="easyui-linkbutton c8 fgta-button-detiladd" style="width: 100px">Tambah Baru</a>
+		</div>
+
+		<div id="pnl_editvouform-buttonbar-right">
+			<a id="pnl_editvouform-btn_delete" class="easyui-linkbutton c5" style="width: 100px">Hapus</a>
+		</div>
+	</div>
+	<?php } ?>
+
+
+
+
+</div>	

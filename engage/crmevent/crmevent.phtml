@@ -1,0 +1,16 @@
+<?php require_once dirname(__FILE__).'/crmevent-list.phtml' ?>
+<?php require_once dirname(__FILE__).'/crmevent-edit.phtml' ?>
+<?php require_once dirname(__FILE__).'/crmevent-invitedgrid.phtml' ?>
+<?php require_once dirname(__FILE__).'/crmevent-invitedform.phtml' ?>
+<?php require_once dirname(__FILE__).'/crmevent-attendantgrid.phtml' ?>
+<?php require_once dirname(__FILE__).'/crmevent-attendantform.phtml' ?>
+
+
+
+<?php
+$customrecordstatus = __DIR__.'/crmevent-customrecordstatus.phtml'; 
+if (is_file($customrecordstatus)) {
+	include $customrecordstatus;
+} else { ?>
+
+<?php } ?>
