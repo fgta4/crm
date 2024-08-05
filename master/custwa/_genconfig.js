@@ -25,8 +25,9 @@ module.exports = {
 			primarykeys: ['custwalinkreq_id'],
 			comment: 'Daftar Contact Customer',
 			data: {
-				custwalinkreq_id: {text:'ID', type: dbtype.varchar(14), null:false},
-				intent: {text:'Intent', type: dbtype.varchar(64), null:false},
+				custwalinkreq_id: {text:'ID', type: dbtype.varchar(32), null:false},
+				intent: {text:'Intent', type: dbtype.varchar(128), null:false},
+				room_id: {text:'Room', type: dbtype.varchar(32), null:false},
 				message: {text:'Message', type: dbtype.varchar(1024), null:false},
 				data: {text:'Data', type: dbtype.varchar(2048), null:false},
 				custwa_id: {text:'Customer', type: dbtype.varchar(14), null:false, hidden: true},
