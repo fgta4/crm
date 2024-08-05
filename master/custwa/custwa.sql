@@ -34,8 +34,9 @@ ALTER TABLE `mst_custwa` MODIFY COLUMN IF EXISTS  `custwa_gender` varchar(1)    
 
 
 CREATE TABLE IF NOT EXISTS `mst_custwalinkreq` (
-	`custwalinkreq_id` varchar(14) NOT NULL , 
-	`intent` varchar(64) NOT NULL , 
+	`custwalinkreq_id` varchar(32) NOT NULL , 
+	`intent` varchar(128) NOT NULL , 
+	`room_id` varchar(32) NOT NULL , 
 	`message` varchar(1024) NOT NULL , 
 	`data` varchar(2048) NOT NULL , 
 	`custwa_id` varchar(14) NOT NULL , 
@@ -49,14 +50,16 @@ ENGINE=InnoDB
 COMMENT='Daftar Contact Customer';
 
 
-ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `intent` varchar(64) NOT NULL  AFTER `custwalinkreq_id`;
-ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `message` varchar(1024) NOT NULL  AFTER `intent`;
+ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `intent` varchar(128) NOT NULL  AFTER `custwalinkreq_id`;
+ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `room_id` varchar(32) NOT NULL  AFTER `intent`;
+ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `message` varchar(1024) NOT NULL  AFTER `room_id`;
 ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `data` varchar(2048) NOT NULL  AFTER `message`;
 ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `custwa_id` varchar(14) NOT NULL  AFTER `data`;
 
 
-ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `intent` varchar(64) NOT NULL   AFTER `custwalinkreq_id`;
-ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `message` varchar(1024) NOT NULL   AFTER `intent`;
+ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `intent` varchar(128) NOT NULL   AFTER `custwalinkreq_id`;
+ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `room_id` varchar(32) NOT NULL   AFTER `intent`;
+ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `message` varchar(1024) NOT NULL   AFTER `room_id`;
 ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `data` varchar(2048) NOT NULL   AFTER `message`;
 ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `custwa_id` varchar(14) NOT NULL   AFTER `data`;
 

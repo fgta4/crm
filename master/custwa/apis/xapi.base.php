@@ -26,7 +26,7 @@ use \FGTA4\exceptions\WebException;
  * Tangerang, 26 Maret 2021
  *
  * digenerate dengan FGTA4 generator
- * tanggal 30/07/2024
+ * tanggal 05/08/2024
  */
 class custwaBase extends WebAPI {
 

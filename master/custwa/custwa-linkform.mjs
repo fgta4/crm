@@ -21,6 +21,7 @@ const pnl_form = $('#pnl_editlinkform-form')
 const obj = {
 	txt_custwalinkreq_id: $('#pnl_editlinkform-txt_custwalinkreq_id'),
 	txt_intent: $('#pnl_editlinkform-txt_intent'),
+	txt_room_id: $('#pnl_editlinkform-txt_room_id'),
 	txt_message: $('#pnl_editlinkform-txt_message'),
 	txt_data: $('#pnl_editlinkform-txt_data'),
 	txt_custwa_id: $('#pnl_editlinkform-txt_custwa_id')
