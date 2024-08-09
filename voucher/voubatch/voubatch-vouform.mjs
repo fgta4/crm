@@ -30,7 +30,6 @@ const obj = {
 	txt_vou_infocode: $('#pnl_editvouform-txt_vou_infocode'),
 	txt_vou_infocoderan: $('#pnl_editvouform-txt_vou_infocoderan'),
 	txt_vou_infocodeparity: $('#pnl_editvouform-txt_vou_infocodeparity'),
-	txt_vou_assigncode: $('#pnl_editvouform-txt_vou_assigncode'),
 	txt_vou_assignto: $('#pnl_editvouform-txt_vou_assignto'),
 	txt_vou_assigntoname: $('#pnl_editvouform-txt_vou_assigntoname'),
 	txt_voumailerque_id: $('#pnl_editvouform-txt_voumailerque_id'),

@@ -41,7 +41,7 @@ module.exports = {
 				},
 				
 				voubatch_descr: {text:'Descr', type: dbtype.varchar(255), suppresslist: true},
-
+				voubatch_greeting: {text:'Greeting', type: dbtype.varchar(1000), suppresslist: true, options:{multiline:true, height:'143px'}},
 
 				crmevent_id: { 
 					before: `
@@ -178,7 +178,7 @@ module.exports = {
 				vou_infocoderan: { text:'InfoCode No', type: dbtype.varchar(2), null:false, suppresslist: true },
 				vou_infocodeparity: { text:'InfoCode Parity', type: dbtype.varchar(2), null:false, suppresslist: true },
 
-				vou_assigncode: { text:'Assign Code', type: dbtype.varchar(60), null:true, suppresslist: true },
+
 				vou_assignto: { text:'Assign To', type: dbtype.varchar(60), null:true, suppresslist: true },
 				vou_assigntoname: { text:'Assign To Name', type: dbtype.varchar(255), null:true, suppresslist: true },
 				voumailerque_id: { 
@@ -187,7 +187,17 @@ module.exports = {
 					options: {  disabled: true } 
 				},
 
-				vou_file: {text:'Picture', type: dbtype.varchar(90), suppresslist: true,  comp: comp.Filebox(), options: { accept: 'image/*' }},
+				vou_file: {
+					text:'Picture', type: dbtype.varchar(90), suppresslist: true,  comp: comp.Filebox(), options: { accept: 'image/*' },
+					after: `
+					<div class="form_row pnl_editvouform_row">
+						<div class="form_label_col"></div>
+						<div class="form_input_col" style="border: 0px solid black">
+							<a id="pnl_editvouform-btn_download" download="" href="">Download</a>
+						</div>
+					</div>					
+					`
+				},
 
 
 				vou_isactive: { 

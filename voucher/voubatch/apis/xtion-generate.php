@@ -73,7 +73,7 @@ $API = new class extends voubatchBase {
 				$this->save_and_set_generate_flag($id, $currentdata);
 
 				// export ke FGTA
-				$this->export_to_FGTA($id, $currentdata);
+				// $this->export_to_FGTA($id, $currentdata);
 
 
 
@@ -295,7 +295,7 @@ $API = new class extends voubatchBase {
 				];
 
 				if ($header->voubatch_isgenimage==1) {
-					$obj->vou_file = $obj->vou_id . "jpg";
+					$obj->vou_file = $obj->vou_id . ".jpg";
 				}
 
 
