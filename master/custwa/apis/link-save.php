@@ -33,7 +33,7 @@ use \FGTA4\exceptions\WebException;
  * Tangerang, 26 Maret 2021
  *
  * digenerate dengan FGTA4 generator
- * tanggal 05/08/2024
+ * tanggal 08/08/2024
  */
 $API = new class extends custwaBase {
 	
@@ -67,8 +67,10 @@ $API = new class extends custwaBase {
 			
 			// data yang akan di update dari table
 			$sqlUpdateField  = [
-					'custwalinkreq_id', 'intent', 'room_id', 'message',
-					'data', 'custwa_id'
+					'custwalinkreq_id', 'ref', 'intent', 'room_id',
+					'message', 'voubatch_id', 'crmevent_id', 'code',
+					'slpart', 'data', 'result', 'status',
+					'custwa_id'
 			];
 			if (method_exists(get_class($hnd), 'setUpdateField')) {
 				// setUpdateField(&$sqlUpdateField, $data, $options)
@@ -187,8 +189,10 @@ $API = new class extends custwaBase {
 				}
 
 				$sqlFieldList = [
-					'custwalinkreq_id' => 'A.`custwalinkreq_id`', 'intent' => 'A.`intent`', 'room_id' => 'A.`room_id`', 'message' => 'A.`message`',
-					'data' => 'A.`data`', 'custwa_id' => 'A.`custwa_id`', '_createby' => 'A.`_createby`', '_createdate' => 'A.`_createdate`',
+					'custwalinkreq_id' => 'A.`custwalinkreq_id`', 'ref' => 'A.`ref`', 'intent' => 'A.`intent`', 'room_id' => 'A.`room_id`',
+					'message' => 'A.`message`', 'voubatch_id' => 'A.`voubatch_id`', 'crmevent_id' => 'A.`crmevent_id`', 'code' => 'A.`code`',
+					'slpart' => 'A.`slpart`', 'data' => 'A.`data`', 'result' => 'A.`result`', 'status' => 'A.`status`',
+					'custwa_id' => 'A.`custwa_id`', '_createby' => 'A.`_createby`', '_createdate' => 'A.`_createdate`', '_modifyby' => 'A.`_modifyby`',
 					'_createby' => 'A.`_createby`', '_createdate' => 'A.`_createdate`', '_modifyby' => 'A.`_modifyby`', '_modifydate' => 'A.`_modifydate`'
 				];
 				$sqlFromTable = "mst_custwalinkreq A";

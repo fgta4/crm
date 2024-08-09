@@ -26,10 +26,17 @@ module.exports = {
 			comment: 'Daftar Contact Customer',
 			data: {
 				custwalinkreq_id: {text:'ID', type: dbtype.varchar(32), null:false},
+				ref: {text:'Ref', type: dbtype.varchar(32)},
 				intent: {text:'Intent', type: dbtype.varchar(128), null:false},
 				room_id: {text:'Room', type: dbtype.varchar(32), null:false},
 				message: {text:'Message', type: dbtype.varchar(1024), null:false},
+				voubatch_id: {text:'VouBatch', type: dbtype.varchar(32)},
+				crmevent_id: {text:'Event', type: dbtype.varchar(32)},
+				code: {text:'Code', type: dbtype.varchar(32)},
+				slpart: {text:'SL part', type: dbtype.varchar(32)},
 				data: {text:'Data', type: dbtype.varchar(2048), null:false},
+				result: {text:'Result', type: dbtype.varchar(2048), null:false},
+				status: {text:'Status', type: dbtype.varchar(3)},
 				custwa_id: {text:'Customer', type: dbtype.varchar(14), null:false, hidden: true},
 			}
 		}

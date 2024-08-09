@@ -10,6 +10,13 @@ import * as pEditInvitedgrid from './crmevent-invitedgrid.mjs'
 import * as pEditInvitedform from './crmevent-invitedform.mjs'
 import * as pEditAttendantgrid from './crmevent-attendantgrid.mjs'
 import * as pEditAttendantform from './crmevent-attendantform.mjs'
+import * as pEditKolgrid from './crmevent-kolgrid.mjs'
+import * as pEditKolform from './crmevent-kolform.mjs'
+import * as pEditMediagrid from './crmevent-mediagrid.mjs'
+import * as pEditMediaform from './crmevent-mediaform.mjs'
+import * as pEditPostgrid from './crmevent-postgrid.mjs'
+import * as pEditPostform from './crmevent-postform.mjs'
+import * as pEditSummary from './crmevent-summary.mjs'
 
 
 
@@ -19,6 +26,13 @@ const pnl_editinvitedgrid = $('#pnl_editinvitedgrid')
 const pnl_editinvitedform = $('#pnl_editinvitedform')
 const pnl_editattendantgrid = $('#pnl_editattendantgrid')
 const pnl_editattendantform = $('#pnl_editattendantform')
+const pnl_editkolgrid = $('#pnl_editkolgrid')
+const pnl_editkolform = $('#pnl_editkolform')
+const pnl_editmediagrid = $('#pnl_editmediagrid')
+const pnl_editmediaform = $('#pnl_editmediaform')
+const pnl_editpostgrid = $('#pnl_editpostgrid')
+const pnl_editpostform = $('#pnl_editpostform')
+const pnl_editsummary = $('#pnl_editsummary')
 
 
 
@@ -52,7 +66,14 @@ export async function init(opt) {
 			{panel: pnl_editinvitedgrid, handler: pEditInvitedgrid},
 			{panel: pnl_editinvitedform, handler: pEditInvitedform},
 			{panel: pnl_editattendantgrid, handler: pEditAttendantgrid},
-			{panel: pnl_editattendantform, handler: pEditAttendantform}			
+			{panel: pnl_editattendantform, handler: pEditAttendantform},
+			{panel: pnl_editkolgrid, handler: pEditKolgrid},
+			{panel: pnl_editkolform, handler: pEditKolform},
+			{panel: pnl_editmediagrid, handler: pEditMediagrid},
+			{panel: pnl_editmediaform, handler: pEditMediaform},
+			{panel: pnl_editpostgrid, handler: pEditPostgrid},
+			{panel: pnl_editpostform, handler: pEditPostform},
+			{panel: pnl_editsummary, handler: pEditSummary}			
 		], opt)
 
 	$ui.setPages(pages)

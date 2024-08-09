@@ -129,6 +129,7 @@ CREATE TABLE IF NOT EXISTS `mst_vou` (
 	`vou_infocode` varchar(13) NOT NULL , 
 	`vou_infocoderan` varchar(2) NOT NULL , 
 	`vou_infocodeparity` varchar(2) NOT NULL , 
+	`vou_assigncode` varchar(60)  , 
 	`vou_assignto` varchar(60)  , 
 	`vou_assigntoname` varchar(255)  , 
 	`voumailerque_id` varchar(14)  , 
@@ -170,7 +171,8 @@ ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_value` decimal(16, 2) NOT N
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_infocode` varchar(13) NOT NULL  AFTER `vou_value`;
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_infocoderan` varchar(2) NOT NULL  AFTER `vou_infocode`;
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_infocodeparity` varchar(2) NOT NULL  AFTER `vou_infocoderan`;
-ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_assignto` varchar(60)   AFTER `vou_infocodeparity`;
+ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_assigncode` varchar(60)   AFTER `vou_infocodeparity`;
+ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_assignto` varchar(60)   AFTER `vou_assigncode`;
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_assigntoname` varchar(255)   AFTER `vou_assignto`;
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `voumailerque_id` varchar(14)   AFTER `vou_assigntoname`;
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_file` varchar(90)   AFTER `voumailerque_id`;
@@ -203,7 +205,8 @@ ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_value` decimal(16, 2) NOT NU
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_infocode` varchar(13) NOT NULL   AFTER `vou_value`;
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_infocoderan` varchar(2) NOT NULL   AFTER `vou_infocode`;
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_infocodeparity` varchar(2) NOT NULL   AFTER `vou_infocoderan`;
-ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_assignto` varchar(60)    AFTER `vou_infocodeparity`;
+ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_assigncode` varchar(60)    AFTER `vou_infocodeparity`;
+ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_assignto` varchar(60)    AFTER `vou_assigncode`;
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_assigntoname` varchar(255)    AFTER `vou_assignto`;
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `voumailerque_id` varchar(14)    AFTER `vou_assigntoname`;
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_file` varchar(90)    AFTER `voumailerque_id`;

@@ -28,7 +28,7 @@ use \FGTA4\exceptions\WebException;
  * Tangerang, 26 Maret 2021
  *
  * digenerate dengan FGTA4 generator
- * tanggal 26/10/2023
+ * tanggal 24/11/2023
  */
 $API = new class extends crmeventBase {
 	
@@ -91,14 +91,14 @@ $API = new class extends crmeventBase {
 
 
 			$sqlFieldList = [
-				'crmevent_id' => 'A.`crmevent_id`', 'crmevent_name' => 'A.`crmevent_name`', 'crmevent_descr' => 'A.`crmevent_descr`', 'crmevent_dtstart' => 'A.`crmevent_dtstart`',
-				'crmevent_dtend' => 'A.`crmevent_dtend`', 'crmevent_dtaffected' => 'A.`crmevent_dtaffected`', 'crmevent_message' => 'A.`crmevent_message`', 'crmevent_registeredmessage' => 'A.`crmevent_registeredmessage`',
-				'crmevent_iscommit' => 'A.`crmevent_iscommit`', 'crmevent_isdisabled' => 'A.`crmevent_isdisabled`', 'crmevent_isunlimit' => 'A.`crmevent_isunlimit`', 'crmevent_isclose' => 'A.`crmevent_isclose`',
-				'crmevent_targetinvited' => 'A.`crmevent_targetinvited`', 'crmevent_targetattendant' => 'A.`crmevent_targetattendant`', 'crmevent_targetnewcontact' => 'A.`crmevent_targetnewcontact`', 'crmevent_targettx' => 'A.`crmevent_targettx`',
-				'crmevent_targettxnew' => 'A.`crmevent_targettxnew`', 'crmevent_targetbuyer' => 'A.`crmevent_targetbuyer`', 'crmevent_targetbuyernew' => 'A.`crmevent_targetbuyernew`', 'crmevent_targetsales' => 'A.`crmevent_targetsales`',
-				'crmevent_targetsalesnew' => 'A.`crmevent_targetsalesnew`', 'crmevent_totalinvited' => 'A.`crmevent_totalinvited`', 'crmevent_totalattendant' => 'A.`crmevent_totalattendant`', 'crmevent_totalnewcontact' => 'A.`crmevent_totalnewcontact`',
-				'crmevent_totaltx' => 'A.`crmevent_totaltx`', 'crmevent_totaltxnew' => 'A.`crmevent_totaltxnew`', 'crmevent_totalbuyer' => 'A.`crmevent_totalbuyer`', 'crmevent_totalbuyernew' => 'A.`crmevent_totalbuyernew`',
-				'crmevent_totalsales' => 'A.`crmevent_totalsales`', 'crmevent_totalsalesnew' => 'A.`crmevent_totalsalesnew`', 'crmsource_id' => 'A.`crmsource_id`', '_createby' => 'A.`_createby`',
+				'crmevent_id' => 'A.`crmevent_id`', 'crmevent_name' => 'A.`crmevent_name`', 'crmevent_descr' => 'A.`crmevent_descr`', 'crmevent_dtactive' => 'A.`crmevent_dtactive`',
+				'crmevent_dtstart' => 'A.`crmevent_dtstart`', 'crmevent_dtend' => 'A.`crmevent_dtend`', 'crmevent_dtaffected' => 'A.`crmevent_dtaffected`', 'crmevent_message' => 'A.`crmevent_message`',
+				'crmevent_invitationmessage' => 'A.`crmevent_invitationmessage`', 'crmevent_registeredmessage' => 'A.`crmevent_registeredmessage`', 'crmevent_iscommit' => 'A.`crmevent_iscommit`', 'crmevent_isdisabled' => 'A.`crmevent_isdisabled`',
+				'crmevent_isunlimit' => 'A.`crmevent_isunlimit`', 'crmevent_isclose' => 'A.`crmevent_isclose`', 'crmevent_targetinvited' => 'A.`crmevent_targetinvited`', 'crmevent_targetattendant' => 'A.`crmevent_targetattendant`',
+				'crmevent_targetnewcontact' => 'A.`crmevent_targetnewcontact`', 'crmevent_targettx' => 'A.`crmevent_targettx`', 'crmevent_targettxnew' => 'A.`crmevent_targettxnew`', 'crmevent_targetbuyer' => 'A.`crmevent_targetbuyer`',
+				'crmevent_targetbuyernew' => 'A.`crmevent_targetbuyernew`', 'crmevent_targetsales' => 'A.`crmevent_targetsales`', 'crmevent_targetsalesnew' => 'A.`crmevent_targetsalesnew`', 'crmevent_totalinvited' => 'A.`crmevent_totalinvited`',
+				'crmevent_totalattendant' => 'A.`crmevent_totalattendant`', 'crmevent_totalnewcontact' => 'A.`crmevent_totalnewcontact`', 'crmevent_totaltx' => 'A.`crmevent_totaltx`', 'crmevent_totaltxnew' => 'A.`crmevent_totaltxnew`',
+				'crmevent_totalbuyer' => 'A.`crmevent_totalbuyer`', 'crmevent_totalbuyernew' => 'A.`crmevent_totalbuyernew`', 'crmevent_totalsales' => 'A.`crmevent_totalsales`', 'crmevent_totalsalesnew' => 'A.`crmevent_totalsalesnew`',
 				'_createby' => 'A.`_createby`', '_createdate' => 'A.`_createdate`', '_modifyby' => 'A.`_modifyby`', '_modifydate' => 'A.`_modifydate`'
 			];
 			$sqlFromTable = "trn_crmevent A";
@@ -131,6 +131,7 @@ $API = new class extends crmeventBase {
 
 
 			$result->record = array_merge($record, [
+				'crmevent_dtactive' => date("d/m/Y", strtotime($record['crmevent_dtactive'])),
 				'crmevent_dtstart' => date("d/m/Y", strtotime($record['crmevent_dtstart'])),
 				'crmevent_dtend' => date("d/m/Y", strtotime($record['crmevent_dtend'])),
 				'crmevent_dtaffected' => date("d/m/Y", strtotime($record['crmevent_dtaffected'])),
@@ -140,7 +141,6 @@ $API = new class extends crmeventBase {
 				//'tanggal' => date("d/m/Y", strtotime($record['tanggal'])),
 				//'gendername' => $record['gender']
 				
-				'crmsource_name' => \FGTA4\utils\SqlUtility::Lookup($record['crmsource_id'], $this->db, 'mst_crmsource', 'crmsource_id', 'crmsource_name'),
 
 
 				'_createby' => \FGTA4\utils\SqlUtility::Lookup($record['_createby'], $this->db, $GLOBALS['MAIN_USERTABLE'], 'user_id', 'user_fullname'),

@@ -28,7 +28,7 @@ use \FGTA4\exceptions\WebException;
  * Tangerang, 26 Maret 2021
  *
  * digenerate dengan FGTA4 generator
- * tanggal 26/10/2023
+ * tanggal 24/11/2023
  */
 $API = new class extends crmeventBase {
 	
@@ -78,7 +78,7 @@ $API = new class extends crmeventBase {
 			try {
 				
 				// Deleting child data referenced to this table
-				$tabletodelete = ['trn_crmeventinvited', 'trn_crmeventattendant'];
+				$tabletodelete = ['trn_crmeventinvited', 'trn_crmeventattendant', 'trn_crmeventkol', 'trn_crmeventmedia', 'trn_crmeventpost', 'trn_crmevent'];
 				if (method_exists(get_class($hnd), 'DocumentDeleting')) {
 					// ** DocumentDeleting(string $id, array &$tabletodelete)
 					$hnd->DocumentDeleting($data->{$primarykey}, $tabletodelete);

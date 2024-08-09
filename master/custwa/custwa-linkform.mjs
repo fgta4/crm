@@ -20,10 +20,17 @@ const chk_autoadd = $('#pnl_editlinkform-autoadd')
 const pnl_form = $('#pnl_editlinkform-form')
 const obj = {
 	txt_custwalinkreq_id: $('#pnl_editlinkform-txt_custwalinkreq_id'),
+	txt_ref: $('#pnl_editlinkform-txt_ref'),
 	txt_intent: $('#pnl_editlinkform-txt_intent'),
 	txt_room_id: $('#pnl_editlinkform-txt_room_id'),
 	txt_message: $('#pnl_editlinkform-txt_message'),
+	txt_voubatch_id: $('#pnl_editlinkform-txt_voubatch_id'),
+	txt_crmevent_id: $('#pnl_editlinkform-txt_crmevent_id'),
+	txt_code: $('#pnl_editlinkform-txt_code'),
+	txt_slpart: $('#pnl_editlinkform-txt_slpart'),
 	txt_data: $('#pnl_editlinkform-txt_data'),
+	txt_result: $('#pnl_editlinkform-txt_result'),
+	txt_status: $('#pnl_editlinkform-txt_status'),
 	txt_custwa_id: $('#pnl_editlinkform-txt_custwa_id')
 }
 

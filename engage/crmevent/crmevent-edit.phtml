@@ -32,6 +32,14 @@
 		</div>
 
 		<div class="form_row pnl_edit_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Activated Date</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-dt_crmevent_dtactive" class="easyui-datebox" style="width: 400px" mapping="crmevent_dtactive" data-options="editable:false , required: true, invalidMessage: 'Tanggal mulai harus diisi'">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_edit_row" >
 			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Start Date</div>
 			<div class="form_input_col" style="border: 0px solid black">
 				<input id="pnl_edit-dt_crmevent_dtstart" class="easyui-datebox" style="width: 400px" mapping="crmevent_dtstart" data-options="editable:false , required: true, invalidMessage: 'Tanggal mulai harus diisi'">
@@ -59,6 +67,14 @@
 			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Message</div>
 			<div class="form_input_col" style="border: 0px solid black">
 				<input id="pnl_edit-txt_crmevent_message" class="easyui-textbox" mapping="crmevent_message"  maxlength="1000" style="width: 400px" data-options="multiline: false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_edit_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Invitation Message</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-txt_crmevent_invitationmessage" class="easyui-textbox" mapping="crmevent_invitationmessage"  maxlength="1000" style="width: 400px" data-options="multiline: false  ">
 				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
 			</div>
 		</div>
@@ -123,6 +139,9 @@
 			</div>
 		</div>
 
+		<?=$this->SectionBegin('Transaction Target', true, true, '')?>
+		<div class="fgta_section_collapsible " style="display: none">
+					
 		<div class="form_row pnl_edit_row" >
 			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Target Tx</div>
 			<div class="form_input_col" style="border: 0px solid black">
@@ -171,6 +190,12 @@
 			</div>
 		</div>
 
+		</div>			
+		<?=$this->SectionEnd('')?>
+					
+		<?=$this->SectionBegin('Result', true, true, '')?>
+		<div class="fgta_section_collapsible " style="display: none">
+					
 		<div class="form_row pnl_edit_row" >
 			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Total Invited</div>
 			<div class="form_input_col" style="border: 0px solid black">
@@ -243,14 +268,9 @@
 			</div>
 		</div>
 
-		<div class="form_row pnl_edit_row" >
-			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Alokasi Source</div>
-			<div class="form_input_col" style="border: 0px solid black">
-				<input id="pnl_edit-cbo_crmsource_id" class="easyui-combo" style="width: 400px" mapping="crmsource_id" display="crmsource_name" data-options="editable:false, valueField:'id', textField:'text' , prompt: '-- PILIH --'"  >
-				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
-			</div>
-		</div>
-
+		</div>			
+		<?=$this->SectionEnd('')?>
+					
 	</form>
 
 
@@ -274,6 +294,22 @@
 				<div class="fgtable-head-drow" style="height: 25px; padding: 5px 5px 0px 5px; " onclick="$ui.getPages().ITEMS['pnl_edit'].handler.detil_open('pnl_editattendantgrid')">
 					<div id="pnl_edit-txt_attendant_title" class="detilgrid-text">Attendant</div>
 					<div id="pnl_edit-txt_attendant_value" class="detilgrid-value attendant_totalvalue">&nbsp;</div>
+				</div>
+				<div class="fgtable-head-drow" style="height: 25px; padding: 5px 5px 0px 5px; " onclick="$ui.getPages().ITEMS['pnl_edit'].handler.detil_open('pnl_editkolgrid')">
+					<div id="pnl_edit-txt_kol_title" class="detilgrid-text">KOL</div>
+					<div id="pnl_edit-txt_kol_value" class="detilgrid-value kol_totalvalue">&nbsp;</div>
+				</div>
+				<div class="fgtable-head-drow" style="height: 25px; padding: 5px 5px 0px 5px; " onclick="$ui.getPages().ITEMS['pnl_edit'].handler.detil_open('pnl_editmediagrid')">
+					<div id="pnl_edit-txt_media_title" class="detilgrid-text">Media</div>
+					<div id="pnl_edit-txt_media_value" class="detilgrid-value media_totalvalue">&nbsp;</div>
+				</div>
+				<div class="fgtable-head-drow" style="height: 25px; padding: 5px 5px 0px 5px; " onclick="$ui.getPages().ITEMS['pnl_edit'].handler.detil_open('pnl_editpostgrid')">
+					<div id="pnl_edit-txt_post_title" class="detilgrid-text">Post</div>
+					<div id="pnl_edit-txt_post_value" class="detilgrid-value post_totalvalue">&nbsp;</div>
+				</div>
+				<div class="fgtable-head-drow" style="height: 25px; padding: 5px 5px 0px 5px; ; " onclick="$ui.getPages().ITEMS['pnl_edit'].handler.detil_open('pnl_editsummary')">
+					<div id="pnl_edit-txt_summary_title" class="detilgrid-text">Summary</div>
+					<div id="pnl_edit-txt_summary_value" class="detilgrid-value summary_totalvalue">&nbsp;</div>
 				</div>
 
 			</div>		
