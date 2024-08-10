@@ -179,6 +179,7 @@ module.exports = {
 				vou_infocodeparity: { text:'InfoCode Parity', type: dbtype.varchar(2), null:false, suppresslist: true },
 
 
+				vou_assigncode: { text:'Assign Code', type: dbtype.varchar(60), null:true, suppresslist: true },
 				vou_assignto: { text:'Assign To', type: dbtype.varchar(60), null:true, suppresslist: true },
 				vou_assigntoname: { text:'Assign To Name', type: dbtype.varchar(255), null:true, suppresslist: true },
 				voumailerque_id: { 
