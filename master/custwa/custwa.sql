@@ -40,11 +40,12 @@ CREATE TABLE IF NOT EXISTS `mst_custwalinkreq` (
 	`room_id` varchar(32) NOT NULL , 
 	`message` varchar(1024) NOT NULL , 
 	`voubatch_id` varchar(32)  , 
+	`vou_id` varchar(32)  , 
 	`crmevent_id` varchar(32)  , 
 	`code` varchar(32)  , 
 	`slpart` varchar(32)  , 
-	`data` varchar(2048) NOT NULL , 
-	`result` varchar(2048) NOT NULL , 
+	`data` varchar(2048)  , 
+	`result` varchar(2048)  , 
 	`status` varchar(3)  , 
 	`custwa_id` varchar(14) NOT NULL , 
 	`_createby` varchar(14) NOT NULL , 
@@ -62,11 +63,12 @@ ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `intent` varchar(128) 
 ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `room_id` varchar(32) NOT NULL  AFTER `intent`;
 ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `message` varchar(1024) NOT NULL  AFTER `room_id`;
 ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `voubatch_id` varchar(32)   AFTER `message`;
-ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `crmevent_id` varchar(32)   AFTER `voubatch_id`;
+ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `vou_id` varchar(32)   AFTER `voubatch_id`;
+ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `crmevent_id` varchar(32)   AFTER `vou_id`;
 ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `code` varchar(32)   AFTER `crmevent_id`;
 ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `slpart` varchar(32)   AFTER `code`;
-ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `data` varchar(2048) NOT NULL  AFTER `slpart`;
-ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `result` varchar(2048) NOT NULL  AFTER `data`;
+ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `data` varchar(2048)   AFTER `slpart`;
+ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `result` varchar(2048)   AFTER `data`;
 ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `status` varchar(3)   AFTER `result`;
 ALTER TABLE `mst_custwalinkreq` ADD COLUMN IF NOT EXISTS  `custwa_id` varchar(14) NOT NULL  AFTER `status`;
 
@@ -76,11 +78,12 @@ ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `intent` varchar(128) N
 ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `room_id` varchar(32) NOT NULL   AFTER `intent`;
 ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `message` varchar(1024) NOT NULL   AFTER `room_id`;
 ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `voubatch_id` varchar(32)    AFTER `message`;
-ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `crmevent_id` varchar(32)    AFTER `voubatch_id`;
+ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `vou_id` varchar(32)    AFTER `voubatch_id`;
+ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `crmevent_id` varchar(32)    AFTER `vou_id`;
 ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `code` varchar(32)    AFTER `crmevent_id`;
 ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `slpart` varchar(32)    AFTER `code`;
-ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `data` varchar(2048) NOT NULL   AFTER `slpart`;
-ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `result` varchar(2048) NOT NULL   AFTER `data`;
+ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `data` varchar(2048)    AFTER `slpart`;
+ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `result` varchar(2048)    AFTER `data`;
 ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `status` varchar(3)    AFTER `result`;
 ALTER TABLE `mst_custwalinkreq` MODIFY COLUMN IF EXISTS  `custwa_id` varchar(14) NOT NULL   AFTER `status`;
 

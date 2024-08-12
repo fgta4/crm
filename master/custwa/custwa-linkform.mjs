@@ -25,6 +25,7 @@ const obj = {
 	txt_room_id: $('#pnl_editlinkform-txt_room_id'),
 	txt_message: $('#pnl_editlinkform-txt_message'),
 	txt_voubatch_id: $('#pnl_editlinkform-txt_voubatch_id'),
+	txt_vou_id: $('#pnl_editlinkform-txt_vou_id'),
 	txt_crmevent_id: $('#pnl_editlinkform-txt_crmevent_id'),
 	txt_code: $('#pnl_editlinkform-txt_code'),
 	txt_slpart: $('#pnl_editlinkform-txt_slpart'),
