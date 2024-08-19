@@ -30,6 +30,26 @@ class voubatch_headerHandler extends WebAPI  {
 	}
 
 
+	public function DataListLooping(array &$record) : void {
+		
+		$voubatch_dtactive = $record['voubatch_dtactive'];
+		$voubatch_dtexpired = $record['voubatch_dtexpired'];
+
+		$dtactive = strtotime($voubatch_dtactive);
+		$dtexpired = strtotime($voubatch_dtexpired);
+
+		$now = strtotime(date('Y-m-d'));
+		if ($now >= $dtactive && $now <= $dtexpired) {
+			$record['voubatch_status'] = 'active';
+		} else if ($now > $dtexpired) {
+			$record['voubatch_status'] = 'expired';
+		} else {
+			$record['voubatch_status'] = 'pending';
+		}
+
+	}
+
+
 }		
 		
 		
