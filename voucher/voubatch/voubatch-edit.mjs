@@ -28,6 +28,7 @@ const obj = {
 	cbo_voutype_id: $('#pnl_edit-cbo_voutype_id'),
 	cbo_brand_id: $('#pnl_edit-cbo_brand_id'),
 	txt_voubatch_descr: $('#pnl_edit-txt_voubatch_descr'),
+	txt_voubatch_greeting: $('#pnl_edit-txt_voubatch_greeting'),
 	cbo_crmevent_id: $('#pnl_edit-cbo_crmevent_id'),
 	dt_voubatch_dtstart: $('#pnl_edit-dt_voubatch_dtstart'),
 	dt_voubatch_dtend: $('#pnl_edit-dt_voubatch_dtend'),

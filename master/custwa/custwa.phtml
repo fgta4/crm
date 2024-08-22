@@ -1,0 +1,14 @@
+<?php require_once dirname(__FILE__).'/custwa-list.phtml' ?>
+<?php require_once dirname(__FILE__).'/custwa-edit.phtml' ?>
+<?php require_once dirname(__FILE__).'/custwa-linkgrid.phtml' ?>
+<?php require_once dirname(__FILE__).'/custwa-linkform.phtml' ?>
+
+
+
+<?php
+$customrecordstatus = __DIR__.'/custwa-customrecordstatus.phtml'; 
+if (is_file($customrecordstatus)) {
+	include $customrecordstatus;
+} else { ?>
+
+<?php } ?>

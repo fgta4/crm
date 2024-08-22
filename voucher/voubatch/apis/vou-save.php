@@ -33,7 +33,7 @@ use \FGTA4\exceptions\WebException;
  * Tangerang, 26 Maret 2021
  *
  * digenerate dengan FGTA4 generator
- * tanggal 25/10/2023
+ * tanggal 10/08/2024
  */
 $API = new class extends voubatchBase {
 	
@@ -69,12 +69,13 @@ $API = new class extends voubatchBase {
 			$sqlUpdateField  = [
 					'vou_id', 'vou_no', 'vou_ran', 'vou_parity',
 					'vou_value', 'vou_infocode', 'vou_infocoderan', 'vou_infocodeparity',
-					'vou_assignto', 'vou_assigntoname', 'voumailerque_id', 'vou_file',
-					'vou_isactive', 'vou_dtactive', 'vou_dtexpired', 'vou_isview',
-					'vou_viewdate', 'vou_ismark', 'vou_markregion', 'vou_markbranch',
-					'vou_markmachine', 'vou_isuse', 'vou_useby', 'vou_usedate',
-					'vou_createfrombon', 'vou_createfrombonvalue', 'vou_bon', 'vou_useregionbranch',
-					'vou_useregionbranchname', 'vou_usevalue', 'vou_isdup', 'voubatch_id'
+					'vou_assigncode', 'vou_assignto', 'vou_assigntoname', 'voumailerque_id',
+					'vou_file', 'vou_isactive', 'vou_dtactive', 'vou_dtexpired',
+					'vou_isview', 'vou_viewdate', 'vou_ismark', 'vou_markregion',
+					'vou_markbranch', 'vou_markmachine', 'vou_isuse', 'vou_useby',
+					'vou_usedate', 'vou_createfrombon', 'vou_createfrombonvalue', 'vou_bon',
+					'vou_useregionbranch', 'vou_useregionbranchname', 'vou_usevalue', 'vou_isdup',
+					'voubatch_id'
 			];
 			if (method_exists(get_class($hnd), 'setUpdateField')) {
 				// setUpdateField(&$sqlUpdateField, $data, $options)
@@ -104,6 +105,7 @@ $API = new class extends voubatchBase {
 
 
 
+			if ($obj->vou_assigncode=='') { $obj->vou_assigncode = '--NULL--'; }
 			if ($obj->vou_assignto=='') { $obj->vou_assignto = '--NULL--'; }
 			if ($obj->vou_assigntoname=='') { $obj->vou_assigntoname = '--NULL--'; }
 			if ($obj->voumailerque_id=='') { $obj->voumailerque_id = '--NULL--'; }
@@ -249,12 +251,13 @@ $API = new class extends voubatchBase {
 				$sqlFieldList = [
 					'vou_id' => 'A.`vou_id`', 'vou_no' => 'A.`vou_no`', 'vou_ran' => 'A.`vou_ran`', 'vou_parity' => 'A.`vou_parity`',
 					'vou_value' => 'A.`vou_value`', 'vou_infocode' => 'A.`vou_infocode`', 'vou_infocoderan' => 'A.`vou_infocoderan`', 'vou_infocodeparity' => 'A.`vou_infocodeparity`',
-					'vou_assignto' => 'A.`vou_assignto`', 'vou_assigntoname' => 'A.`vou_assigntoname`', 'voumailerque_id' => 'A.`voumailerque_id`', 'vou_file' => 'A.`vou_file`',
-					'vou_isactive' => 'A.`vou_isactive`', 'vou_dtactive' => 'A.`vou_dtactive`', 'vou_dtexpired' => 'A.`vou_dtexpired`', 'vou_isview' => 'A.`vou_isview`',
-					'vou_viewdate' => 'A.`vou_viewdate`', 'vou_ismark' => 'A.`vou_ismark`', 'vou_markregion' => 'A.`vou_markregion`', 'vou_markbranch' => 'A.`vou_markbranch`',
-					'vou_markmachine' => 'A.`vou_markmachine`', 'vou_isuse' => 'A.`vou_isuse`', 'vou_useby' => 'A.`vou_useby`', 'vou_usedate' => 'A.`vou_usedate`',
-					'vou_createfrombon' => 'A.`vou_createfrombon`', 'vou_createfrombonvalue' => 'A.`vou_createfrombonvalue`', 'vou_bon' => 'A.`vou_bon`', 'vou_useregionbranch' => 'A.`vou_useregionbranch`',
-					'vou_useregionbranchname' => 'A.`vou_useregionbranchname`', 'vou_usevalue' => 'A.`vou_usevalue`', 'vou_isdup' => 'A.`vou_isdup`', 'voubatch_id' => 'A.`voubatch_id`',
+					'vou_assigncode' => 'A.`vou_assigncode`', 'vou_assignto' => 'A.`vou_assignto`', 'vou_assigntoname' => 'A.`vou_assigntoname`', 'voumailerque_id' => 'A.`voumailerque_id`',
+					'vou_file' => 'A.`vou_file`', 'vou_isactive' => 'A.`vou_isactive`', 'vou_dtactive' => 'A.`vou_dtactive`', 'vou_dtexpired' => 'A.`vou_dtexpired`',
+					'vou_isview' => 'A.`vou_isview`', 'vou_viewdate' => 'A.`vou_viewdate`', 'vou_ismark' => 'A.`vou_ismark`', 'vou_markregion' => 'A.`vou_markregion`',
+					'vou_markbranch' => 'A.`vou_markbranch`', 'vou_markmachine' => 'A.`vou_markmachine`', 'vou_isuse' => 'A.`vou_isuse`', 'vou_useby' => 'A.`vou_useby`',
+					'vou_usedate' => 'A.`vou_usedate`', 'vou_createfrombon' => 'A.`vou_createfrombon`', 'vou_createfrombonvalue' => 'A.`vou_createfrombonvalue`', 'vou_bon' => 'A.`vou_bon`',
+					'vou_useregionbranch' => 'A.`vou_useregionbranch`', 'vou_useregionbranchname' => 'A.`vou_useregionbranchname`', 'vou_usevalue' => 'A.`vou_usevalue`', 'vou_isdup' => 'A.`vou_isdup`',
+					'voubatch_id' => 'A.`voubatch_id`', '_createby' => 'A.`_createby`', '_createdate' => 'A.`_createdate`', '_modifyby' => 'A.`_modifyby`',
 					'_createby' => 'A.`_createby`', '_createdate' => 'A.`_createdate`', '_modifyby' => 'A.`_modifyby`', '_modifydate' => 'A.`_modifydate`'
 				];
 				$sqlFromTable = "mst_vou A";

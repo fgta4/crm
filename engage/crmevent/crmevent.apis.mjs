@@ -10,7 +10,9 @@ kemdian, di program bisa diakses dengan
 
 */
 
-export const load_crmsource_id = 'crm/master/crmsource/list'
 export const load_user_id = 'fgta/framework/fguser/list'
+export const load_kol_id = 'crm/engage/kol/list'
+export const load_media_id = 'crm/engage/media/list'
+export const load_mediaposttype_id = 'crm/engage/mediaposttype/list'
 
 

@@ -5,13 +5,13 @@ if (!defined('FGTA4')) {
 }
 
 require_once __ROOT_DIR.'/core/sqlutil.php';
-
+require_once __ROOT_DIR.'/core/couchdbclient.php';
 // /* Enable Debugging */
 // require_once __ROOT_DIR.'/core/debug.php';
 
 use \FGTA4\exceptions\WebException;
 // use \FGTA4\debug;
-
+use \FGTA4\CouchDbClient;
 
 
 
@@ -26,7 +26,7 @@ use \FGTA4\exceptions\WebException;
  * Tangerang, 26 Maret 2021
  *
  * digenerate dengan FGTA4 generator
- * tanggal 26/10/2023
+ * tanggal 24/11/2023
  */
 class crmeventBase extends WebAPI {
 
@@ -53,7 +53,8 @@ class crmeventBase extends WebAPI {
 					$DB_CONFIG['param']
 		);
 
-		
+		$FSCONFIGNAME = $GLOBALS['MAINFS'];
+		$this->cdb = new CouchDbClient((object)DB_CONFIG[$FSCONFIGNAME]);
 	}
 
 

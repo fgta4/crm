@@ -1,0 +1,186 @@
+<div id="pnl_editpostform">
+	<div class="fgta-page-title" style="display: flex; align-items: center ">
+		<div id="pnl_editpostform-caption">{{STATE_BEG}}Post{{STATE_END}}</div>
+		<a id="pnl_editpostform-btn_edit" href="javascript:void(0)" class="easyui-linkbutton fgta-button-edit" style="margin-left:10px;" data-options="plain:true,iconCls:'fgta-icon-edit'">edit</a>
+	</div>
+	<div id="pnl_editpostform-title" class="fgta-page-subtitle">XXXXXXX</div>
+
+
+	<form id="pnl_editpostform-form">
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">ID</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-txt_crmeventpost_id" class="easyui-textbox" mapping="crmeventpost_id"  maxlength="14"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">URL</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-txt_crmeventpost_url" class="easyui-textbox" mapping="crmeventpost_url" lowercase="true" maxlength="500"  style="width: 400px" data-options="multiline:false  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Post Date</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-dt_crmeventpost_dtpost" class="easyui-datebox" style="width: 400px" mapping="crmeventpost_dtpost" data-options="editable:false , required: true, invalidMessage: 'Tanggal mulai harus diisi'">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Reported Date</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-dt_crmeventpost_dtreported" class="easyui-datebox" style="width: 400px" mapping="crmeventpost_dtreported" data-options="editable:false , required: true, invalidMessage: 'Tanggal selesai harus diisi'">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Post Type</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-cbo_mediaposttype_id" class="easyui-combo" style="width: 400px" mapping="mediaposttype_id" display="mediaposttype_name" data-options="editable:false, valueField:'id', textField:'text' , required: true, invalidMessage: 'Post Type harus diisi'"  validType="requiredcombo['pnl_editpostform-cbo_mediaposttype_id']" >
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">KOL</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-cbo_kol_id" class="easyui-combo" style="width: 400px" mapping="kol_id" display="kol_name" data-options="editable:false, valueField:'id', textField:'text' , prompt: 'NONE'" >
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Media</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-cbo_media_id" class="easyui-combo" style="width: 400px" mapping="media_id" display="media_name" data-options="editable:false, valueField:'id', textField:'text' , prompt: 'NONE'" >
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row mt-edi mt-fb-post mt-ig-post mt-ig-reel mt-ig-story" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Impression</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-txt_crmeventpost_impression" class="easyui-numberbox" mapping="crmeventpost_impression" style="width: 400px; text-align:right" data-options="precision: 0, decimalSeparator:'.', groupSeparator:','  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row mt-edi mt-fb-post mt-ig-post mt-ig-reel mt-ig-story" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Reach</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-txt_crmeventpost_reach" class="easyui-numberbox" mapping="crmeventpost_reach" style="width: 400px; text-align:right" data-options="precision: 0, decimalSeparator:'.', groupSeparator:','  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">View</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-txt_crmeventpost_view" class="easyui-numberbox" mapping="crmeventpost_view" style="width: 400px; text-align:right" data-options="precision: 0, decimalSeparator:'.', groupSeparator:','  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Comment</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-txt_crmeventpost_comment" class="easyui-numberbox" mapping="crmeventpost_comment" style="width: 400px; text-align:right" data-options="precision: 0, decimalSeparator:'.', groupSeparator:','  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Likes</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-txt_crmeventpost_likes" class="easyui-numberbox" mapping="crmeventpost_likes" style="width: 400px; text-align:right" data-options="precision: 0, decimalSeparator:'.', groupSeparator:','  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Share</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-txt_crmeventpost_share" class="easyui-numberbox" mapping="crmeventpost_share" style="width: 400px; text-align:right" data-options="precision: 0, decimalSeparator:'.', groupSeparator:','  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Saved</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-txt_crmeventpost_save" class="easyui-numberbox" mapping="crmeventpost_save" style="width: 400px; text-align:right" data-options="precision: 0, decimalSeparator:'.', groupSeparator:','  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Rate</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-txt_crmeventpost_engagementrate" class="easyui-numberbox" mapping="crmeventpost_engagementrate" style="width: 400px; text-align:right" data-options="precision: 2, decimalSeparator:'.', groupSeparator:','  ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"></div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-chk_mediaposttype_iskol" class="easyui-checkbox c1" mapping="mediaposttype_iskol" data-options="label: 'IsKOL', labelPosition: 'after', checked: false ">
+			</div>
+		</div>
+
+		<div class="form_row pnl_editpostform_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Event</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_editpostform-txt_crmevent_id" class="easyui-textbox" mapping="crmevent_id"  maxlength="14"  style="width: 400px" data-options="multiline:false  , disabled: true">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+	</form>
+
+
+	<div class="form_row" style="margin-top: 30px">
+		<div class="form_label_col"></div>
+		<div class="form_input_col" style="border: 0px solid black">
+			<div style="margin-bottom: 10px">
+				<input id="pnl_editpostform-autoadd" type="checkbox"><label for="pnl_editpostform-autoadd">Otomatis tambah baru setelah berhasil disimpan</label>
+			</div>
+			<div>
+				<a id="pnl_editpostform-btn_save" class="easyui-linkbutton c1 fgta-button-save" style="width: 100px">Simpan</a>
+			</div>
+		</div>
+	</div>	
+
+
+	<?php
+	$custombuttonbar = __DIR__.'/crmevent-postform-custombuttonbar.phtml';
+	if (is_file($custombuttonbar)) {
+		include $custombuttonbar;
+	} else { ?>
+	<div id="pnl_editpostform-buttonbar" style="margin-top: 30px; margin-left:-5px; margin-right: -5px; background-color: #cccccc; height: 40px; display: flex; justify-content: space-between; padding: 5px 2px 2px 2px ">
+		<div id="pnl_editpostform-buttonbar-left">
+			<a id="pnl_editpostform-btn_prev" class="easyui-linkbutton c8 fgta-button-detilprev" style="width: 50px">Prev</a>
+			<a id="pnl_editpostform-btn_next" class="easyui-linkbutton c8 fgta-button-detilnext" style="width: 50px">Next</a>
+		</div>
+
+		<div id="pnl_editpostform-buttonbar-middle">
+			<a id="pnl_editpostform-btn_addnew" class="easyui-linkbutton c8 fgta-button-detiladd" style="width: 100px">Tambah Baru</a>
+		</div>
+
+		<div id="pnl_editpostform-buttonbar-right">
+			<a id="pnl_editpostform-btn_delete" class="easyui-linkbutton c5" style="width: 100px">Hapus</a>
+		</div>
+	</div>
+	<?php } ?>
+
+
+
+
+</div>	

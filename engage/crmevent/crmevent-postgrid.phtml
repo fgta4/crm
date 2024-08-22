@@ -1,0 +1,98 @@
+<div id="pnl_editpostgrid">
+	<div class="fgta-page-title">Daftar Post</div>
+	<div id="pnl_editpostgrid-title" class="fgta-page-subtitle">XXXXXXX</div>
+
+	<!--// Untuk keperluan search di detil
+	<div id="pnl_editpostgrid-pnl_head" style="display: flex; align-items: flex-end">
+		<div class="list-search-wrap" style="width: calc(100% - 65px); display: flex;">
+			<div class="list-search-item" style="width: 50px;">Cari</div>
+			<div class="list-search-item">
+				<input id="pnl_editpostgrid-txt_search" class="easyui-textbox" style="width: 100%">
+			</div>
+			<div class="list-search-item" style="width: 45px">
+				<a href="javascript:void(0)" id="pnl_editpostgrid-btn_load" class="easyui-linkbutton c8 fgta-button-listload" style="width: 45px">Load</a>
+			</div>
+		</div>
+	</div>	
+	//-->
+
+
+	<?php
+	$customheadpanel = __DIR__.'/crmevent-postgrid-customheadpanel.phtml';
+	if (is_file($customheadpanel)) {
+		include $customheadpanel;
+	} 
+	?>
+
+	<div style="margin-top: 10px; margin-bottom: 15px">
+		<table id="pnl_editpostgrid-tbl_list" paging="true" cellspacing="0" width="100%" class="deftable">
+			<?php
+			$customview = __DIR__.'/crmevent-postgrid-customview.phtml'; 
+			if (is_file($customview)) {
+				include $customview;
+			} else { ?>
+			<thead>
+
+				<tr>
+<th type="check">chk</th>					
+					<th mapping="crmeventpost_id">crmeventpost_id</th>
+					<th mapping="crmeventpost_url">crmeventpost_url</th>
+					<th mapping="mediaposttype_name">mediaposttype_name</th>
+					<th mapping="kol_name">kol_name</th>
+					<th mapping="media_name">media_name</th>
+					<th mapping="crmeventpost_engagementrate" style="text-align: right" formatter="row_format_number">crmeventpost_engagementrate</th>
+					<th mapping="mediaposttype_iskol" type="checkbox">mediaposttype_iskol</th>
+
+					<th mapping=""></th>
+				</tr>
+				<tr style="background-color: #cccccc; height: 30px">
+<td class="fgtable-head rowcheck" style="width: 30px; border-bottom: 1px solid #000000; text-align: center">*</td>
+					<td class="fgtable-head" style="width: 100px; border-bottom: 1px solid #000000">ID</td>
+					<td class="fgtable-head" style="width: 100px; border-bottom: 1px solid #000000">URL</td>
+					<td class="fgtable-head" style="width: 100px; border-bottom: 1px solid #000000">Post Type</td>
+					<td class="fgtable-head" style="width: 100px; border-bottom: 1px solid #000000">KOL</td>
+					<td class="fgtable-head" style="width: 100px; border-bottom: 1px solid #000000">Media</td>
+					<td class="fgtable-head" style="width: 100px; text-align: right; border-bottom: 1px solid #000000">Rate</td>
+					<td class="fgtable-head" style="width: 100px; border-bottom: 1px solid #000000; text-align: center">IsKOL</td>
+
+					<td class="fgtable-head" style="border-bottom: 1px solid #000000; text-align: center">&nbsp;</td>
+				</tr>
+			</thead>
+			<?php } ?>
+			
+			<?php
+			$tablefooter = __DIR__.'/crmevent-postgrid-tablefooter.phtml';
+			if (is_file($tablefooter)) {
+				include $tablefooter;
+			} 
+			?>
+			
+		</table>
+	</div>
+
+
+
+	<div class="pnl_editpostgrid-control" style="display: flex; justify-content: space-between; margin-bottom: 100px">
+		<div>
+			<a id="pnl_editpostgrid-removechecked" href="javascript:void(0)" class="easyui-linkbutton c8 fgta-button-rowdel">Hapus Checked</a>
+		</div>
+
+		<div>
+			<a id="pnl_editpostgrid-addrow" href="javascript:void(0)" class="easyui-linkbutton c8 fgta-button-rowadd">Tambah Baris</a>
+		</div>
+
+		<div>
+		</div>
+
+	</div>
+
+
+
+	<?php
+	$customfootpanel = __DIR__.'/crmevent-postgrid-customfootpanel.phtml';
+	if (is_file($customfootpanel)) {
+		include $customfootpanel;
+	} 
+	?>
+
+</div>	

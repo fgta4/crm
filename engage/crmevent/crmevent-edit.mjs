@@ -1,7 +1,7 @@
 var this_page_id;
 var this_page_options;
 
-import {fgta4slideselect} from  '../../../../../index.php/asset/fgta/framework/fgta4libs/fgta4slideselect.mjs'
+
 import * as hnd from  './crmevent-edit-hnd.mjs'
 
 const txt_caption = $('#pnl_edit-caption')
@@ -21,10 +21,12 @@ const obj = {
 	txt_crmevent_id: $('#pnl_edit-txt_crmevent_id'),
 	txt_crmevent_name: $('#pnl_edit-txt_crmevent_name'),
 	txt_crmevent_descr: $('#pnl_edit-txt_crmevent_descr'),
+	dt_crmevent_dtactive: $('#pnl_edit-dt_crmevent_dtactive'),
 	dt_crmevent_dtstart: $('#pnl_edit-dt_crmevent_dtstart'),
 	dt_crmevent_dtend: $('#pnl_edit-dt_crmevent_dtend'),
 	dt_crmevent_dtaffected: $('#pnl_edit-dt_crmevent_dtaffected'),
 	txt_crmevent_message: $('#pnl_edit-txt_crmevent_message'),
+	txt_crmevent_invitationmessage: $('#pnl_edit-txt_crmevent_invitationmessage'),
 	txt_crmevent_registeredmessage: $('#pnl_edit-txt_crmevent_registeredmessage'),
 	chk_crmevent_iscommit: $('#pnl_edit-chk_crmevent_iscommit'),
 	chk_crmevent_isdisabled: $('#pnl_edit-chk_crmevent_isdisabled'),
@@ -47,8 +49,7 @@ const obj = {
 	txt_crmevent_totalbuyer: $('#pnl_edit-txt_crmevent_totalbuyer'),
 	txt_crmevent_totalbuyernew: $('#pnl_edit-txt_crmevent_totalbuyernew'),
 	txt_crmevent_totalsales: $('#pnl_edit-txt_crmevent_totalsales'),
-	txt_crmevent_totalsalesnew: $('#pnl_edit-txt_crmevent_totalsalesnew'),
-	cbo_crmsource_id: $('#pnl_edit-cbo_crmsource_id')
+	txt_crmevent_totalsalesnew: $('#pnl_edit-txt_crmevent_totalsalesnew')
 }
 
 
@@ -97,27 +98,6 @@ export async function init(opt) {
 	// Generator: Upload Handler not exist
 
 
-	obj.cbo_crmsource_id.name = 'pnl_edit-cbo_crmsource_id'		
-	new fgta4slideselect(obj.cbo_crmsource_id, {
-		title: 'Pilih crmsource_id',
-		returnpage: this_page_id,
-		api: $ui.apis.load_crmsource_id,
-		fieldValue: 'crmsource_id',
-		fieldDisplay: 'crmsource_name',
-		fields: [
-			{mapping: 'crmsource_id', text: 'crmsource_id'},
-			{mapping: 'crmsource_name', text: 'crmsource_name'}
-		],
-		OnSelected: (value, display, record, args) => {
-			if (value!=args.PreviousValue ) {
-				if (typeof hnd.cbo_crmsource_id_selected === 'function') {
-					hnd.cbo_crmsource_id_selected(value, display, record, args);
-				}
-			}
-		},
-
-	})				
-				
 
 
 
@@ -219,7 +199,6 @@ export function open(data, rowid, viewmode=true, fn_callback) {
 		updatefilebox(record);
 
 		/*
-		if (result.record.crmsource_id==null) { result.record.crmsource_id='--NULL--'; result.record.crmsource_name='NONE'; }
 
 		*/
 		for (var objid in obj) {
@@ -243,7 +222,6 @@ export function open(data, rowid, viewmode=true, fn_callback) {
 		form.SuspendEvent(true);
 		form
 			.fill(record)
-			.setValue(obj.cbo_crmsource_id, record.crmsource_id, record.crmsource_name)
 			.setViewMode(viewmode)
 			.lock(false)
 			.rowid = rowid
@@ -301,6 +279,7 @@ export function createnew() {
 		form.rowid = null
 
 		// set nilai-nilai default untuk form
+		data.crmevent_dtactive = global.now()
 		data.crmevent_dtstart = global.now()
 		data.crmevent_dtend = global.now()
 		data.crmevent_dtaffected = global.now()
@@ -327,8 +306,6 @@ export function createnew() {
 		data.crmevent_totalsales = 0
 		data.crmevent_totalsalesnew = 0
 
-		data.crmsource_id = '--NULL--'
-		data.crmsource_name = 'NONE'
 
 		if (typeof hnd.form_newdata == 'function') {
 			// untuk mengambil nilai ui component,
@@ -348,6 +325,9 @@ export function createnew() {
 
 		$ui.getPages().ITEMS['pnl_editinvitedgrid'].handler.createnew(data, options)
 		$ui.getPages().ITEMS['pnl_editattendantgrid'].handler.createnew(data, options)
+		$ui.getPages().ITEMS['pnl_editkolgrid'].handler.createnew(data, options)
+		$ui.getPages().ITEMS['pnl_editmediagrid'].handler.createnew(data, options)
+		$ui.getPages().ITEMS['pnl_editpostgrid'].handler.createnew(data, options)
 
 
 	})
@@ -479,7 +459,7 @@ async function form_datasaving(data, options) {
 	//    options.cancel = true
 
 	// Modifikasi object data, apabila ingin menambahkan variabel yang akan dikirim ke server
-	// options.skipmappingresponse = ['crmsource_id', ];
+	// options.skipmappingresponse = [];
 	options.skipmappingresponse = [];
 	for (var objid in obj) {
 		var o = obj[objid]
@@ -528,7 +508,6 @@ async function form_datasaved(result, options) {
 	var data = {}
 	Object.assign(data, form.getData(), result.dataresponse)
 	/*
-	form.setValue(obj.cbo_crmsource_id, result.dataresponse.crmsource_name!=='--NULL--' ? result.dataresponse.crmsource_id : '--NULL--', result.dataresponse.crmsource_name!=='--NULL--'?result.dataresponse.crmsource_name:'NONE')
 
 	*/
 

@@ -12,4 +12,13 @@ export function init(param, fn_callback) {
 	fn_callback();
 }
 
-	
+export function grd_list_rowrender(row) {
+	// {td:td, mapping:td.mapping, text:td.innerHTML}
+	console.log(row.record.voubatch_status)
+	if (row.record.voubatch_status=='expired') {
+		row.td.classList.add('row-expired')
+	} else if (row.record.voubatch_status=='pending') {
+		row.td.classList.add('row-pending')
+	} else {
+	}
+}

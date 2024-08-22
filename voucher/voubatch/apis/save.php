@@ -31,7 +31,7 @@ use \FGTA4\exceptions\WebException;
  * Tangerang, 26 Maret 2021
  *
  * digenerate dengan FGTA4 generator
- * tanggal 25/10/2023
+ * tanggal 10/08/2024
  */
 $API = new class extends voubatchBase {
 	
@@ -210,13 +210,13 @@ $API = new class extends voubatchBase {
 
 				$sqlFieldList = [
 					'voubatch_id' => 'A.`voubatch_id`', 'voutype_id' => 'A.`voutype_id`', 'brand_id' => 'A.`brand_id`', 'voubatch_descr' => 'A.`voubatch_descr`',
-					'crmevent_id' => 'A.`crmevent_id`', 'voubatch_dtstart' => 'A.`voubatch_dtstart`', 'voubatch_dtend' => 'A.`voubatch_dtend`', 'voubatch_cond' => 'A.`voubatch_cond`',
-					'voubatch_dtactive' => 'A.`voubatch_dtactive`', 'voubatch_dtexpired' => 'A.`voubatch_dtexpired`', 'voubatch_file' => 'A.`voubatch_file`', 'voubatch_isgenimage' => 'A.`voubatch_isgenimage`',
-					'voubatch_width' => 'A.`voubatch_width`', 'voubatch_barpostop' => 'A.`voubatch_barpostop`', 'voubatch_barposleft' => 'A.`voubatch_barposleft`', 'voumodel_id' => 'A.`voumodel_id`',
-					'voubatch_code' => 'A.`voubatch_code`', 'voubatch_value' => 'A.`voubatch_value`', 'voubatch_qty' => 'A.`voubatch_qty`', 'voubatch_qtymax' => 'A.`voubatch_qtymax`',
-					'voubatch_isondemand' => 'A.`voubatch_isondemand`', 'voubatch_isactive' => 'A.`voubatch_isactive`', 'voubatch_version' => 'A.`voubatch_version`', 'voubatch_iscommit' => 'A.`voubatch_iscommit`',
-					'voubatch_commitby' => 'A.`voubatch_commitby`', 'voubatch_commitdate' => 'A.`voubatch_commitdate`', 'voubatch_isgenerate' => 'A.`voubatch_isgenerate`', 'voubatch_generateby' => 'A.`voubatch_generateby`',
-					'voubatch_generatedate' => 'A.`voubatch_generatedate`', '_createby' => 'A.`_createby`', '_createdate' => 'A.`_createdate`', '_modifyby' => 'A.`_modifyby`',
+					'voubatch_greeting' => 'A.`voubatch_greeting`', 'crmevent_id' => 'A.`crmevent_id`', 'voubatch_dtstart' => 'A.`voubatch_dtstart`', 'voubatch_dtend' => 'A.`voubatch_dtend`',
+					'voubatch_cond' => 'A.`voubatch_cond`', 'voubatch_dtactive' => 'A.`voubatch_dtactive`', 'voubatch_dtexpired' => 'A.`voubatch_dtexpired`', 'voubatch_file' => 'A.`voubatch_file`',
+					'voubatch_isgenimage' => 'A.`voubatch_isgenimage`', 'voubatch_width' => 'A.`voubatch_width`', 'voubatch_barpostop' => 'A.`voubatch_barpostop`', 'voubatch_barposleft' => 'A.`voubatch_barposleft`',
+					'voumodel_id' => 'A.`voumodel_id`', 'voubatch_code' => 'A.`voubatch_code`', 'voubatch_value' => 'A.`voubatch_value`', 'voubatch_qty' => 'A.`voubatch_qty`',
+					'voubatch_qtymax' => 'A.`voubatch_qtymax`', 'voubatch_isondemand' => 'A.`voubatch_isondemand`', 'voubatch_isactive' => 'A.`voubatch_isactive`', 'voubatch_version' => 'A.`voubatch_version`',
+					'voubatch_iscommit' => 'A.`voubatch_iscommit`', 'voubatch_commitby' => 'A.`voubatch_commitby`', 'voubatch_commitdate' => 'A.`voubatch_commitdate`', 'voubatch_isgenerate' => 'A.`voubatch_isgenerate`',
+					'voubatch_generateby' => 'A.`voubatch_generateby`', 'voubatch_generatedate' => 'A.`voubatch_generatedate`', '_createby' => 'A.`_createby`', '_createdate' => 'A.`_createdate`',
 					'_createby' => 'A.`_createby`', '_createdate' => 'A.`_createdate`', '_modifyby' => 'A.`_modifyby`', '_modifydate' => 'A.`_modifydate`'
 				];
 				$sqlFromTable = "mst_voubatch A";
