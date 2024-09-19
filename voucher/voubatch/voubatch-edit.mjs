@@ -29,7 +29,6 @@ const obj = {
 	cbo_brand_id: $('#pnl_edit-cbo_brand_id'),
 	txt_voubatch_descr: $('#pnl_edit-txt_voubatch_descr'),
 	txt_voubatch_greeting: $('#pnl_edit-txt_voubatch_greeting'),
-	cbo_crmevent_id: $('#pnl_edit-cbo_crmevent_id'),
 	dt_voubatch_dtstart: $('#pnl_edit-dt_voubatch_dtstart'),
 	dt_voubatch_dtend: $('#pnl_edit-dt_voubatch_dtend'),
 	txt_voubatch_cond: $('#pnl_edit-txt_voubatch_cond'),
@@ -187,20 +186,6 @@ export async function init(opt) {
 
 	})				
 				
-	obj.cbo_crmevent_id.name = 'pnl_edit-cbo_crmevent_id'		
-	new fgta4slideselect(obj.cbo_crmevent_id, {
-		title: 'Pilih crmevent_id',
-		returnpage: this_page_id,
-		api: $ui.apis.load_crmevent_id,
-		fieldValue: 'crmevent_id',
-		fieldDisplay: 'crmevent_name',
-		fields: [
-			{mapping: 'crmevent_id', text: 'crmevent_id'},
-			{mapping: 'crmevent_name', text: 'crmevent_name'}
-		],
-
-	})				
-				
 	obj.cbo_voumodel_id.name = 'pnl_edit-cbo_voumodel_id'		
 	new fgta4slideselect(obj.cbo_voumodel_id, {
 		title: 'Pilih voumodel_id',
@@ -317,7 +302,6 @@ export function open(data, rowid, viewmode=true, fn_callback) {
 
 		/*
 		if (result.record.brand_id==null) { result.record.brand_id='--NULL--'; result.record.brand_name='NONE'; }
-		if (result.record.crmevent_id==null) { result.record.crmevent_id='--NULL--'; result.record.crmevent_name='NONE'; }
 
 		*/
 		for (var objid in obj) {
@@ -343,7 +327,6 @@ export function open(data, rowid, viewmode=true, fn_callback) {
 			.fill(record)
 			.setValue(obj.cbo_voutype_id, record.voutype_id, record.voutype_name)
 			.setValue(obj.cbo_brand_id, record.brand_id, record.brand_name)
-			.setValue(obj.cbo_crmevent_id, record.crmevent_id, record.crmevent_name)
 			.setValue(obj.cbo_voumodel_id, record.voumodel_id, record.voumodel_name)
 			.setViewMode(viewmode)
 			.lock(false)
@@ -423,8 +406,6 @@ export function createnew() {
 		data.voutype_name = '-- PILIH --'
 		data.brand_id = '--NULL--'
 		data.brand_name = 'NONE'
-		data.crmevent_id = '--NULL--'
-		data.crmevent_name = 'NONE'
 		data.voumodel_id = '0'
 		data.voumodel_name = '-- PILIH --'
 
@@ -630,7 +611,7 @@ async function form_datasaving(data, options) {
 	//    options.cancel = true
 
 	// Modifikasi object data, apabila ingin menambahkan variabel yang akan dikirim ke server
-	// options.skipmappingresponse = ['brand_id', 'crmevent_id', ];
+	// options.skipmappingresponse = ['brand_id', ];
 	options.skipmappingresponse = [];
 	for (var objid in obj) {
 		var o = obj[objid]
@@ -680,7 +661,6 @@ async function form_datasaved(result, options) {
 	Object.assign(data, form.getData(), result.dataresponse)
 	/*
 	form.setValue(obj.cbo_brand_id, result.dataresponse.brand_name!=='--NULL--' ? result.dataresponse.brand_id : '--NULL--', result.dataresponse.brand_name!=='--NULL--'?result.dataresponse.brand_name:'NONE')
-	form.setValue(obj.cbo_crmevent_id, result.dataresponse.crmevent_name!=='--NULL--' ? result.dataresponse.crmevent_id : '--NULL--', result.dataresponse.crmevent_name!=='--NULL--'?result.dataresponse.crmevent_name:'NONE')
 
 	*/
 

@@ -43,6 +43,8 @@ module.exports = {
 				voubatch_descr: {text:'Descr', type: dbtype.varchar(255), suppresslist: true},
 				voubatch_greeting: {text:'Greeting', type: dbtype.varchar(1000), suppresslist: true, options:{multiline:true, height:'143px'}},
 
+
+				/*
 				crmevent_id: { 
 					before: `
 						<div class="form_row pnl_edit_row">
@@ -60,6 +62,8 @@ module.exports = {
 						api: 'crm/engage/crmevent/list'
 					})
 				},
+				*/
+
 				voubatch_dtstart: {text:'Date Start', type: dbtype.date, null:false, suppresslist: true,},
 				voubatch_dtend: {text:'Date End', type: dbtype.date, null:false},
 				voubatch_cond: {text:'Condition', type: dbtype.varchar(2000), suppresslist: true},

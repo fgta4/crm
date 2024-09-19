@@ -11,7 +11,6 @@ CREATE TABLE IF NOT EXISTS `mst_voubatch` (
 	`brand_id` varchar(10)  , 
 	`voubatch_descr` varchar(255)  , 
 	`voubatch_greeting` varchar(1000)  , 
-	`crmevent_id` varchar(14)  , 
 	`voubatch_dtstart` date NOT NULL , 
 	`voubatch_dtend` date NOT NULL , 
 	`voubatch_cond` varchar(2000)  , 
@@ -50,8 +49,7 @@ ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voutype_id` varchar(5)   A
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `brand_id` varchar(10)   AFTER `voutype_id`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_descr` varchar(255)   AFTER `brand_id`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_greeting` varchar(1000)   AFTER `voubatch_descr`;
-ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `crmevent_id` varchar(14)   AFTER `voubatch_greeting`;
-ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_dtstart` date NOT NULL  AFTER `crmevent_id`;
+ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_dtstart` date NOT NULL  AFTER `voubatch_greeting`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_dtend` date NOT NULL  AFTER `voubatch_dtstart`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_cond` varchar(2000)   AFTER `voubatch_dtend`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_dtactive` date NOT NULL  AFTER `voubatch_cond`;
@@ -81,8 +79,7 @@ ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voutype_id` varchar(5)    A
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `brand_id` varchar(10)    AFTER `voutype_id`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_descr` varchar(255)    AFTER `brand_id`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_greeting` varchar(1000)    AFTER `voubatch_descr`;
-ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `crmevent_id` varchar(14)    AFTER `voubatch_greeting`;
-ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_dtstart` date NOT NULL   AFTER `crmevent_id`;
+ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_dtstart` date NOT NULL   AFTER `voubatch_greeting`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_dtend` date NOT NULL   AFTER `voubatch_dtstart`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_cond` varchar(2000)    AFTER `voubatch_dtend`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_dtactive` date NOT NULL   AFTER `voubatch_cond`;
@@ -111,12 +108,10 @@ ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_generatedate` date
 
 ALTER TABLE `mst_voubatch` ADD KEY IF NOT EXISTS `voutype_id` (`voutype_id`);
 ALTER TABLE `mst_voubatch` ADD KEY IF NOT EXISTS `brand_id` (`brand_id`);
-ALTER TABLE `mst_voubatch` ADD KEY IF NOT EXISTS `crmevent_id` (`crmevent_id`);
 ALTER TABLE `mst_voubatch` ADD KEY IF NOT EXISTS `voumodel_id` (`voumodel_id`);
 
 ALTER TABLE `mst_voubatch` ADD CONSTRAINT `fk_mst_voubatch_mst_voutype` FOREIGN KEY IF NOT EXISTS  (`voutype_id`) REFERENCES `mst_voutype` (`voutype_id`);
 ALTER TABLE `mst_voubatch` ADD CONSTRAINT `fk_mst_voubatch_mst_brand` FOREIGN KEY IF NOT EXISTS  (`brand_id`) REFERENCES `mst_brand` (`brand_id`);
-ALTER TABLE `mst_voubatch` ADD CONSTRAINT `fk_mst_voubatch_trn_crmevent` FOREIGN KEY IF NOT EXISTS  (`crmevent_id`) REFERENCES `trn_crmevent` (`crmevent_id`);
 ALTER TABLE `mst_voubatch` ADD CONSTRAINT `fk_mst_voubatch_mst_voumodel` FOREIGN KEY IF NOT EXISTS  (`voumodel_id`) REFERENCES `mst_voumodel` (`voumodel_id`);
 
 

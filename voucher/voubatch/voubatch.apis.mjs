@@ -12,7 +12,6 @@ kemdian, di program bisa diakses dengan
 
 export const load_voutype_id = 'crm/voucher/voutype/list'
 export const load_brand_id = 'ent/affiliation/brand/list'
-export const load_crmevent_id = 'crm/engage/crmevent/list'
 export const load_voumodel_id = 'crm/voucher/voumodel/list'
 
 
