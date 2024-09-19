@@ -182,12 +182,15 @@ module.exports = {
 				vou_assigncode: { text:'Assign Code', type: dbtype.varchar(60), null:true, suppresslist: true },
 				vou_assignto: { text:'Assign To', type: dbtype.varchar(60), null:true, suppresslist: true },
 				vou_assigntoname: { text:'Assign To Name', type: dbtype.varchar(255), null:true, suppresslist: true },
+				
+				/*
 				voumailerque_id: { 
 					text: 'Que Sent To', type: dbtype.varchar(14),  null: true, suppresslist: true, 
 					reference: {table: 'mst_voumailerque', field_value: 'voumailerque_id', field_display:'voumailerque_nama',  field_display_name:'voumailerque_nama'}, 
 					options: {  disabled: true } 
 				},
-
+				*/
+				
 				vou_file: {
 					text:'Picture', type: dbtype.varchar(90), suppresslist: true,  comp: comp.Filebox(), options: { accept: 'image/*' },
 					after: `

@@ -26,7 +26,7 @@ use \FGTA4\CouchDbClient;
  * Tangerang, 26 Maret 2021
  *
  * digenerate dengan FGTA4 generator
- * tanggal 10/08/2024
+ * tanggal 19/09/2024
  */
 class voubatchBase extends WebAPI {
 

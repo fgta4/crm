@@ -27,7 +27,7 @@ use \FGTA4\exceptions\WebException;
  * Tangerang, 26 Maret 2021
  *
  * digenerate dengan FGTA4 generator
- * tanggal 10/08/2024
+ * tanggal 19/09/2024
  */
 $API = new class extends voubatchBase {
 
@@ -85,13 +85,12 @@ $API = new class extends voubatchBase {
 			$sqlFieldList = [
 				'vou_id' => 'A.`vou_id`', 'vou_no' => 'A.`vou_no`', 'vou_ran' => 'A.`vou_ran`', 'vou_parity' => 'A.`vou_parity`',
 				'vou_value' => 'A.`vou_value`', 'vou_infocode' => 'A.`vou_infocode`', 'vou_infocoderan' => 'A.`vou_infocoderan`', 'vou_infocodeparity' => 'A.`vou_infocodeparity`',
-				'vou_assigncode' => 'A.`vou_assigncode`', 'vou_assignto' => 'A.`vou_assignto`', 'vou_assigntoname' => 'A.`vou_assigntoname`', 'voumailerque_id' => 'A.`voumailerque_id`',
-				'vou_file' => 'A.`vou_file`', 'vou_isactive' => 'A.`vou_isactive`', 'vou_dtactive' => 'A.`vou_dtactive`', 'vou_dtexpired' => 'A.`vou_dtexpired`',
-				'vou_isview' => 'A.`vou_isview`', 'vou_viewdate' => 'A.`vou_viewdate`', 'vou_ismark' => 'A.`vou_ismark`', 'vou_markregion' => 'A.`vou_markregion`',
-				'vou_markbranch' => 'A.`vou_markbranch`', 'vou_markmachine' => 'A.`vou_markmachine`', 'vou_isuse' => 'A.`vou_isuse`', 'vou_useby' => 'A.`vou_useby`',
-				'vou_usedate' => 'A.`vou_usedate`', 'vou_createfrombon' => 'A.`vou_createfrombon`', 'vou_createfrombonvalue' => 'A.`vou_createfrombonvalue`', 'vou_bon' => 'A.`vou_bon`',
-				'vou_useregionbranch' => 'A.`vou_useregionbranch`', 'vou_useregionbranchname' => 'A.`vou_useregionbranchname`', 'vou_usevalue' => 'A.`vou_usevalue`', 'vou_isdup' => 'A.`vou_isdup`',
-				'voubatch_id' => 'A.`voubatch_id`', '_createby' => 'A.`_createby`', '_createdate' => 'A.`_createdate`', '_modifyby' => 'A.`_modifyby`',
+				'vou_assigncode' => 'A.`vou_assigncode`', 'vou_assignto' => 'A.`vou_assignto`', 'vou_assigntoname' => 'A.`vou_assigntoname`', 'vou_file' => 'A.`vou_file`',
+				'vou_isactive' => 'A.`vou_isactive`', 'vou_dtactive' => 'A.`vou_dtactive`', 'vou_dtexpired' => 'A.`vou_dtexpired`', 'vou_isview' => 'A.`vou_isview`',
+				'vou_viewdate' => 'A.`vou_viewdate`', 'vou_ismark' => 'A.`vou_ismark`', 'vou_markregion' => 'A.`vou_markregion`', 'vou_markbranch' => 'A.`vou_markbranch`',
+				'vou_markmachine' => 'A.`vou_markmachine`', 'vou_isuse' => 'A.`vou_isuse`', 'vou_useby' => 'A.`vou_useby`', 'vou_usedate' => 'A.`vou_usedate`',
+				'vou_createfrombon' => 'A.`vou_createfrombon`', 'vou_createfrombonvalue' => 'A.`vou_createfrombonvalue`', 'vou_bon' => 'A.`vou_bon`', 'vou_useregionbranch' => 'A.`vou_useregionbranch`',
+				'vou_useregionbranchname' => 'A.`vou_useregionbranchname`', 'vou_usevalue' => 'A.`vou_usevalue`', 'vou_isdup' => 'A.`vou_isdup`', 'voubatch_id' => 'A.`voubatch_id`',
 				'_createby' => 'A.`_createby`', '_createdate' => 'A.`_createdate`', '_modifyby' => 'A.`_modifyby`', '_modifydate' => 'A.`_modifydate`'
 			];
 			$sqlFromTable = "mst_vou A";
@@ -179,7 +178,6 @@ $API = new class extends voubatchBase {
 					// // jikalau ingin menambah atau edit field di result record, dapat dilakukan sesuai contoh sbb: 
 					//'tanggal' => date("d/m/y", strtotime($record['tanggal'])),
 				 	//'tambahan' => 'dta'
-					'voumailerque_nama' => \FGTA4\utils\SqlUtility::Lookup($record['voumailerque_id'], $this->db, 'mst_voumailerque', 'voumailerque_id', 'voumailerque_nama'),
 				'vou_useby' => \FGTA4\utils\SqlUtility::Lookup($record['vou_useby'], $this->db, $GLOBALS['MAIN_USERTABLE'], 'user_id', 'user_fullname'),
 					 
 				]);
@@ -187,8 +185,7 @@ $API = new class extends voubatchBase {
 
 
 				// lookup data id yang refer ke table lain
-				$this->addFields('voumailerque_nama', 'voumailerque_id', $record, 'mst_voumailerque', 'voumailerque_nama', 'voumailerque_id');
-				$this->addFields('voumailerque_nama', 'vou_useby', $record, $GLOBALS['MAIN_USERTABLE'], 'user_fullname', 'user_id');
+				$this->addFields('undefined', 'vou_useby', $record, $GLOBALS['MAIN_USERTABLE'], 'user_fullname', 'user_id');
 					 
 
 

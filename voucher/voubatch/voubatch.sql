@@ -135,7 +135,6 @@ CREATE TABLE IF NOT EXISTS `mst_vou` (
 	`vou_assigncode` varchar(60)  , 
 	`vou_assignto` varchar(60)  , 
 	`vou_assigntoname` varchar(255)  , 
-	`voumailerque_id` varchar(14)  , 
 	`vou_file` varchar(90)  , 
 	`vou_isactive` tinyint(1) NOT NULL DEFAULT 0, 
 	`vou_dtactive` date NOT NULL , 
@@ -177,8 +176,7 @@ ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_infocodeparity` varchar(2) 
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_assigncode` varchar(60)   AFTER `vou_infocodeparity`;
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_assignto` varchar(60)   AFTER `vou_assigncode`;
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_assigntoname` varchar(255)   AFTER `vou_assignto`;
-ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `voumailerque_id` varchar(14)   AFTER `vou_assigntoname`;
-ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_file` varchar(90)   AFTER `voumailerque_id`;
+ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_file` varchar(90)   AFTER `vou_assigntoname`;
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_isactive` tinyint(1) NOT NULL DEFAULT 0 AFTER `vou_file`;
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_dtactive` date NOT NULL  AFTER `vou_isactive`;
 ALTER TABLE `mst_vou` ADD COLUMN IF NOT EXISTS  `vou_dtexpired` date NOT NULL  AFTER `vou_dtactive`;
@@ -211,8 +209,7 @@ ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_infocodeparity` varchar(2) N
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_assigncode` varchar(60)    AFTER `vou_infocodeparity`;
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_assignto` varchar(60)    AFTER `vou_assigncode`;
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_assigntoname` varchar(255)    AFTER `vou_assignto`;
-ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `voumailerque_id` varchar(14)    AFTER `vou_assigntoname`;
-ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_file` varchar(90)    AFTER `voumailerque_id`;
+ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_file` varchar(90)    AFTER `vou_assigntoname`;
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_isactive` tinyint(1) NOT NULL DEFAULT 0  AFTER `vou_file`;
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_dtactive` date NOT NULL   AFTER `vou_isactive`;
 ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `vou_dtexpired` date NOT NULL   AFTER `vou_dtactive`;
@@ -236,10 +233,8 @@ ALTER TABLE `mst_vou` MODIFY COLUMN IF EXISTS  `voubatch_id` varchar(5) NOT NULL
 
 
 
-ALTER TABLE `mst_vou` ADD KEY IF NOT EXISTS  `voumailerque_id` (`voumailerque_id`);
 ALTER TABLE `mst_vou` ADD KEY IF NOT EXISTS `voubatch_id` (`voubatch_id`);
 
-ALTER TABLE `mst_vou` ADD CONSTRAINT `fk_mst_vou_mst_voumailerque` FOREIGN KEY IF NOT EXISTS (`voumailerque_id`) REFERENCES `mst_voumailerque` (`voumailerque_id`);
 ALTER TABLE `mst_vou` ADD CONSTRAINT `fk_mst_vou_mst_voubatch` FOREIGN KEY IF NOT EXISTS (`voubatch_id`) REFERENCES `mst_voubatch` (`voubatch_id`);
 
 
