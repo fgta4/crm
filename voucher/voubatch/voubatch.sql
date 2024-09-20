@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS `mst_voubatch` (
 	`brand_id` varchar(10)  , 
 	`voubatch_descr` varchar(255)  , 
 	`voubatch_greeting` varchar(1000)  , 
+	`voubatch_qrreq` varchar(1000)  , 
 	`voubatch_dtstart` date NOT NULL , 
 	`voubatch_dtend` date NOT NULL , 
 	`voubatch_cond` varchar(2000)  , 
@@ -26,6 +27,7 @@ CREATE TABLE IF NOT EXISTS `mst_voubatch` (
 	`voubatch_value` decimal(16, 2) NOT NULL DEFAULT 0, 
 	`voubatch_qty` int(4) NOT NULL DEFAULT 0, 
 	`voubatch_qtymax` int(4) NOT NULL DEFAULT 0, 
+	`voubatch_isusecodeact` tinyint(1) NOT NULL DEFAULT 0, 
 	`voubatch_isondemand` tinyint(1) NOT NULL DEFAULT 0, 
 	`voubatch_isactive` tinyint(1) NOT NULL DEFAULT 0, 
 	`voubatch_version` int(4) NOT NULL DEFAULT 0, 
@@ -49,7 +51,8 @@ ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voutype_id` varchar(5)   A
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `brand_id` varchar(10)   AFTER `voutype_id`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_descr` varchar(255)   AFTER `brand_id`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_greeting` varchar(1000)   AFTER `voubatch_descr`;
-ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_dtstart` date NOT NULL  AFTER `voubatch_greeting`;
+ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_qrreq` varchar(1000)   AFTER `voubatch_greeting`;
+ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_dtstart` date NOT NULL  AFTER `voubatch_qrreq`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_dtend` date NOT NULL  AFTER `voubatch_dtstart`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_cond` varchar(2000)   AFTER `voubatch_dtend`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_dtactive` date NOT NULL  AFTER `voubatch_cond`;
@@ -64,7 +67,8 @@ ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_code` varchar(3) 
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_value` decimal(16, 2) NOT NULL DEFAULT 0 AFTER `voubatch_code`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_qty` int(4) NOT NULL DEFAULT 0 AFTER `voubatch_value`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_qtymax` int(4) NOT NULL DEFAULT 0 AFTER `voubatch_qty`;
-ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_isondemand` tinyint(1) NOT NULL DEFAULT 0 AFTER `voubatch_qtymax`;
+ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_isusecodeact` tinyint(1) NOT NULL DEFAULT 0 AFTER `voubatch_qtymax`;
+ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_isondemand` tinyint(1) NOT NULL DEFAULT 0 AFTER `voubatch_isusecodeact`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_isactive` tinyint(1) NOT NULL DEFAULT 0 AFTER `voubatch_isondemand`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_version` int(4) NOT NULL DEFAULT 0 AFTER `voubatch_isactive`;
 ALTER TABLE `mst_voubatch` ADD COLUMN IF NOT EXISTS  `voubatch_iscommit` tinyint(1) NOT NULL DEFAULT 0 AFTER `voubatch_version`;
@@ -79,7 +83,8 @@ ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voutype_id` varchar(5)    A
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `brand_id` varchar(10)    AFTER `voutype_id`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_descr` varchar(255)    AFTER `brand_id`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_greeting` varchar(1000)    AFTER `voubatch_descr`;
-ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_dtstart` date NOT NULL   AFTER `voubatch_greeting`;
+ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_qrreq` varchar(1000)    AFTER `voubatch_greeting`;
+ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_dtstart` date NOT NULL   AFTER `voubatch_qrreq`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_dtend` date NOT NULL   AFTER `voubatch_dtstart`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_cond` varchar(2000)    AFTER `voubatch_dtend`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_dtactive` date NOT NULL   AFTER `voubatch_cond`;
@@ -94,7 +99,8 @@ ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_code` varchar(3)  
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_value` decimal(16, 2) NOT NULL DEFAULT 0  AFTER `voubatch_code`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_qty` int(4) NOT NULL DEFAULT 0  AFTER `voubatch_value`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_qtymax` int(4) NOT NULL DEFAULT 0  AFTER `voubatch_qty`;
-ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_isondemand` tinyint(1) NOT NULL DEFAULT 0  AFTER `voubatch_qtymax`;
+ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_isusecodeact` tinyint(1) NOT NULL DEFAULT 0  AFTER `voubatch_qtymax`;
+ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_isondemand` tinyint(1) NOT NULL DEFAULT 0  AFTER `voubatch_isusecodeact`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_isactive` tinyint(1) NOT NULL DEFAULT 0  AFTER `voubatch_isondemand`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_version` int(4) NOT NULL DEFAULT 0  AFTER `voubatch_isactive`;
 ALTER TABLE `mst_voubatch` MODIFY COLUMN IF EXISTS  `voubatch_iscommit` tinyint(1) NOT NULL DEFAULT 0  AFTER `voubatch_version`;

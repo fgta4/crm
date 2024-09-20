@@ -43,6 +43,7 @@ module.exports = {
 				voubatch_descr: {text:'Descr', type: dbtype.varchar(255), suppresslist: true},
 				voubatch_greeting: {text:'Greeting', type: dbtype.varchar(1000), suppresslist: true, options:{multiline:true, height:'143px'}},
 
+				voubatch_qrreq: {text:'QR Request', type: dbtype.varchar(1000), suppresslist: true, options:{multiline:true, height:'143px'}},
 
 				/*
 				crmevent_id: { 
@@ -133,14 +134,17 @@ module.exports = {
 					tipstype: 'visible'	
 				},
 
+				voubatch_isusecodeact: { 
+					text: 'Use Activation Code', type: dbtype.boolean, null: false, default: '0', suppresslist: true, options: { labelWidth:'300px' } 
+				},
+
 				voubatch_isondemand: { 
 					text: 'OnDemand voucher generate', type: dbtype.boolean, null: false, default: '0', suppresslist: true, options: { labelWidth:'300px' } 
 				},
 
 				voubatch_isactive: { 
-					text: 'Active', type: dbtype.boolean, null: false, default: '0', suppresslist: true, options: { labelWidth:'300px' } 
+					text: 'Active', type: dbtype.boolean, null: false, default: '0', unset:true, suppresslist: true, options: { labelWidth:'300px', disabled: true } 
 				},
-
 
 				voubatch_version: {
 					section: section.Begin('Status'),

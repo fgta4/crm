@@ -29,6 +29,7 @@ const obj = {
 	cbo_brand_id: $('#pnl_edit-cbo_brand_id'),
 	txt_voubatch_descr: $('#pnl_edit-txt_voubatch_descr'),
 	txt_voubatch_greeting: $('#pnl_edit-txt_voubatch_greeting'),
+	txt_voubatch_qrreq: $('#pnl_edit-txt_voubatch_qrreq'),
 	dt_voubatch_dtstart: $('#pnl_edit-dt_voubatch_dtstart'),
 	dt_voubatch_dtend: $('#pnl_edit-dt_voubatch_dtend'),
 	txt_voubatch_cond: $('#pnl_edit-txt_voubatch_cond'),
@@ -44,6 +45,7 @@ const obj = {
 	txt_voubatch_value: $('#pnl_edit-txt_voubatch_value'),
 	txt_voubatch_qty: $('#pnl_edit-txt_voubatch_qty'),
 	txt_voubatch_qtymax: $('#pnl_edit-txt_voubatch_qtymax'),
+	chk_voubatch_isusecodeact: $('#pnl_edit-chk_voubatch_isusecodeact'),
 	chk_voubatch_isondemand: $('#pnl_edit-chk_voubatch_isondemand'),
 	chk_voubatch_isactive: $('#pnl_edit-chk_voubatch_isactive'),
 	txt_voubatch_version: $('#pnl_edit-txt_voubatch_version'),
@@ -396,6 +398,7 @@ export function createnew() {
 		data.voubatch_value = 0
 		data.voubatch_qty = 0
 		data.voubatch_qtymax = 0
+		data.voubatch_isusecodeact = '0'
 		data.voubatch_isondemand = '0'
 		data.voubatch_isactive = '0'
 		data.voubatch_version = 0

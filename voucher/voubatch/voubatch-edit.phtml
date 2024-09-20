@@ -48,6 +48,14 @@
 		</div>
 
 		<div class="form_row pnl_edit_row" >
+			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">QR Request</div>
+			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-txt_voubatch_qrreq" class="easyui-textbox" mapping="voubatch_qrreq"  maxlength="1000" style="width: 400px" data-options="multiline: false , multiline: true, height: '143px' ">
+				<div style="margin-top: 3px; margin-bottom: 5px; font-size: 0.75em; font-style: italic; color:#54381d;"></div>
+			</div>
+		</div>
+
+		<div class="form_row pnl_edit_row" >
 			<div class="form_label_col"  style="border: 0px solid black; vertical-align: top; margin-top: 7px;">Date Start</div>
 			<div class="form_input_col" style="border: 0px solid black">
 				<input id="pnl_edit-dt_voubatch_dtstart" class="easyui-datebox" style="width: 400px" mapping="voubatch_dtstart" data-options="editable:false ">
@@ -183,6 +191,13 @@
 		<div class="form_row pnl_edit_row" >
 			<div class="form_label_col"></div>
 			<div class="form_input_col" style="border: 0px solid black">
+				<input id="pnl_edit-chk_voubatch_isusecodeact" class="easyui-checkbox c1" mapping="voubatch_isusecodeact" data-options="label: 'Use Activation Code', labelPosition: 'after', checked: false , labelWidth: '300px'">
+			</div>
+		</div>
+
+		<div class="form_row pnl_edit_row" >
+			<div class="form_label_col"></div>
+			<div class="form_input_col" style="border: 0px solid black">
 				<input id="pnl_edit-chk_voubatch_isondemand" class="easyui-checkbox c1" mapping="voubatch_isondemand" data-options="label: 'OnDemand voucher generate', labelPosition: 'after', checked: false , labelWidth: '300px'">
 			</div>
 		</div>
@@ -190,7 +205,7 @@
 		<div class="form_row pnl_edit_row" >
 			<div class="form_label_col"></div>
 			<div class="form_input_col" style="border: 0px solid black">
-				<input id="pnl_edit-chk_voubatch_isactive" class="easyui-checkbox c1" mapping="voubatch_isactive" data-options="label: 'Active', labelPosition: 'after', checked: false , labelWidth: '300px'">
+				<input id="pnl_edit-chk_voubatch_isactive" class="easyui-checkbox c1" mapping="voubatch_isactive" data-options="label: 'Active', labelPosition: 'after', checked: false , labelWidth: '300px', disabled: true">
 			</div>
 		</div>
 

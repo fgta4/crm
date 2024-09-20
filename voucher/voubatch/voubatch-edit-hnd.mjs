@@ -36,7 +36,10 @@ export function form_datasaved(result, rowdata, options) {
 }
 
 export function form_updatebuttonstate(record) {
-	console.log(record);
+	// console.log(record);
+
+	var voubatch_isondemand = record.voubatch_isondemand;
+
 
 	var button_commit_on = false;	
 	var button_uncommit_on = false;	
@@ -47,6 +50,12 @@ export function form_updatebuttonstate(record) {
 		// semua tombol mati
 		form.lock(true);
 		button_download_on = true;
+		if (voubatch_isondemand==1) {
+			button_download_on=false
+		} else {
+			button_download_on=true
+		}
+
 	} else {
 		button_download_on = false;
 		if (record.voubatch_iscommit==1) {
@@ -68,6 +77,20 @@ export function form_updatebuttonstate(record) {
 }
 
 async function btn_generate_click() {
+	// cek dulu apakah eligible untuk di-generate
+	var qty = parseInt(form.getValue(obj.txt_voubatch_qty));
+	var ondemand = form.getValue(obj.chk_voubatch_isondemand);
+
+	// apabila qty bernilai 0 dan ondemand harus di set
+	// apbila ondeman di-set, qty harus bernilai 0
+	if (qty==0 && ondemand==false) {
+		$ui.ShowMessage('[WARNING]Jumlah voucher yang akan digenerate harus diisi untuk voucher statis.');
+		return;
+	} else if (ondemand==true && qty>0) {	
+		$ui.ShowMessage('[WARNING]Jumlah voucher yang akan digenerate harus di-nol kan untuk voucher dinamis.');
+		return;
+	}
+
 	editor.btn_action_click({ action: 'generate', cancel: false, param: {}});
 }
 

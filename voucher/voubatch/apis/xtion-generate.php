@@ -190,7 +190,8 @@ $API = new class extends voubatchBase {
 		try {
 			$sql = " 
 				update mst_voubatch
-				set 
+				set
+				voubatch_isactive=1, 
 				voubatch_isgenerate=1,
 				voubatch_generateby=:username,
 				voubatch_generatedate = :date
