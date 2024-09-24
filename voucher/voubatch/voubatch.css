@@ -9,3 +9,19 @@
 	width: 15px;
 	height: 15px;
 }
+
+
+.mul-icon {
+	background-image: url('assets/multivoucher.svg');
+	background-repeat: no-repeat;
+  	background-size: 15px 15px;
+	width: 15px;
+	height: 15px;
+}
+
+.circle {
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;	
+	opacity: .7;
+}
